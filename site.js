@@ -1,9 +1,13 @@
-// The site needs JavaScript only for the mobile menu and, outside of
-// production, restoring .html on nav links. Only the production domain is
-// expected to rewrite clean URLs server-side; GitHub Pages, local previews
-// and any other host serve the .html files directly, and root-relative
-// clean links there would also resolve against the wrong path (e.g. GitHub
-// Pages serves this site under /nibly.ca/, not /).
+// The site needs JavaScript only for the mobile menu and adjusting nav
+// links outside of production. Nav links in the HTML are clean,
+// root-relative paths matching the eventual production scheme (nibly.ca,
+// www.nibly.ca), left untouched there. GitHub Pages serves this repo under
+// /nibly.ca/ and resolves extension-less paths to their .html file natively
+// (confirmed: cypress-vending.github.io/nibly.ca/locations serves
+// locations.html directly), so there the links just need the /nibly.ca
+// prefix. Everywhere else (local preview, opening a file directly, any
+// other static server) has no such resolution, so the real .html filename
+// is restored instead.
 const CLEAN_URL_FILES = {
   "/": "index.html",
   "/the-machine": "the-machine.html",
@@ -12,12 +16,26 @@ const CLEAN_URL_FILES = {
   "/privacy-policy": "privacy-policy.html",
 };
 const PRODUCTION_HOSTS = ["nibly.ca", "www.nibly.ca"];
-if (!PRODUCTION_HOSTS.includes(location.hostname)) {
+const GITHUB_PAGES_HOST = "cypress-vending.github.io";
+const GITHUB_PAGES_BASE = "/nibly.ca";
+
+function splitHash(href) {
+  const hashIndex = href.indexOf("#");
+  return hashIndex === -1
+    ? [href, ""]
+    : [href.slice(0, hashIndex), href.slice(hashIndex)];
+}
+
+if (location.hostname === GITHUB_PAGES_HOST) {
   document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
-    const hashIndex = href.indexOf("#");
-    const path = hashIndex === -1 ? href : href.slice(0, hashIndex);
-    const hash = hashIndex === -1 ? "" : href.slice(hashIndex);
+    const [path, hash] = splitHash(link.getAttribute("href"));
+    if (path in CLEAN_URL_FILES) {
+      link.setAttribute("href", GITHUB_PAGES_BASE + path + hash);
+    }
+  });
+} else if (!PRODUCTION_HOSTS.includes(location.hostname)) {
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const [path, hash] = splitHash(link.getAttribute("href"));
     const file = CLEAN_URL_FILES[path];
     if (file) link.setAttribute("href", file + hash);
   });
