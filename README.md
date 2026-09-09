@@ -16,19 +16,20 @@ noindex headers and serves a blocking robots.txt. It also exercises the proposed
 clean URLs and redirects. You can instead open `index.html` directly: relative
 HTML links and assets work from disk or an ordinary static server.
 
-The Home page enquiry form is now a live HubSpot embed (portal `22691627`,
-form `584606a2-c862-4806-9216-923f18c529fd`) ([submissions here](https://app.hubspot.com/submissions/22691627/form/584606a2-c862-4806-9216-923f18c529fd/submissions)) and submits real enquiries to
-HubSpot. The Contact Us, Locations and The Machine pages still use the
-original static form markup with browser-native validation only; `site.js`
-no longer intercepts their submission, so submitting one of those forms
-performs a plain GET on the current page instead of sending anywhere. Email
-and telephone links use the published Nibly contact details.
+The enquiry form on Home, Contact Us, Locations and The Machine is now the
+same live HubSpot embed (portal `22691627`, form
+`584606a2-c862-4806-9216-923f18c529fd`)
+([submissions here](https://app.hubspot.com/submissions/22691627/form/584606a2-c862-4806-9216-923f18c529fd/submissions))
+and submits real enquiries to HubSpot. The old static form markup and its
+browser-native validation are gone from all four pages; `site.js` no longer
+does any form handling, only the mobile menu. Privacy Policy has no enquiry
+form. Email and telephone links use the published Nibly contact details.
 
 ## Editing and checks
 
 Edit the five HTML files directly. Shared styling is in `styles.css`; `site.js`
 now only handles the mobile menu. Its local form-feedback code was removed
-when the Home page form was replaced with the HubSpot embed. The inherited
+when the enquiry forms were replaced with the HubSpot embed. The inherited
 `scripts.js` is unused by the new pages. The existing favicon is retained.
 
 Metadata and JSON-LD are inline in the HTML. Keep structured data consistent with
@@ -60,11 +61,9 @@ Before switching the domain:
   support URLs, which are outside this five-page site. Do not redirect them all
   to Home.
 - Confirm the company, package, hosting and support copy with the Nibly team.
-- The Home page enquiry form now delivers to HubSpot; decide whether to add the
-  same embed to Contact Us, Locations and The Machine, or otherwise reconnect
-  their forms, since those three currently fail silently on submit. Review the
-  inherited privacy policy against HubSpot and any other form service or
-  analytics chosen.
+- All enquiry forms now deliver to HubSpot; confirm form routing/notifications
+  are configured in the HubSpot portal and review the inherited privacy policy
+  against HubSpot and any other analytics chosen.
 - Protect or noindex public staging previews. A canonical tag alone does not
   prevent a preview from being indexed.
 - On the production domain, verify crawler access through hosting/CDN controls,
