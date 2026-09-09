@@ -13,8 +13,11 @@ python3 tools/preview.py --port 4174
 
 Open http://127.0.0.1:4174/. The preview binds only to the local computer, adds
 noindex headers and serves a blocking robots.txt. It also exercises the proposed
-clean URLs and redirects. You can instead open `index.html` directly: relative
-HTML links and assets work from disk or an ordinary static server.
+clean URLs and redirects. You can instead open `index.html` directly: `site.js`
+rewrites the page's clean nav links (`/the-machine`, etc.) back to their real
+`.html` filename on any host other than the production domain, see
+"Hosting status and launch preparation" below, so the same HTML works from disk
+or an ordinary static server.
 
 The enquiry form on Home, Contact Us, Locations and The Machine is now the
 same live HubSpot embed (portal `22691627`, form
@@ -51,8 +54,19 @@ team review. The Squarespace site and domain DNS remain unchanged.
 The canonical URLs, sitemap and production robots.txt target https://www.nibly.ca/.
 They are prepared for an approved future production launch. `routes.txt` is a
 host-neutral mapping used by the local preview, not an automatically applied
-GitHub Pages or other provider configuration. GitHub Pages will serve the relative
-`.html` links, but does not apply this manifest's redirects and clean-URL rewrites.
+GitHub Pages or other provider configuration. GitHub Pages does not apply this
+manifest's redirects and clean-URL rewrites, and it serves this repo under the
+`/nibly.ca/` project path rather than the domain root, so a root-relative link
+like `/locations` would resolve to the wrong URL there.
+
+Nav links in the HTML source are written as clean, root-relative paths (`/`,
+`/the-machine`, etc.) matching the eventual production scheme. `site.js`
+checks `location.hostname` against an allowlist of production hosts
+(`nibly.ca`, `www.nibly.ca`); everywhere else, including GitHub Pages, the
+local preview and opening a file directly, it rewrites those links back to
+the actual relative `.html` filename so navigation still works without a
+server-side rewrite. Update that allowlist in `site.js` once the production
+domain is confirmed.
 
 Before switching the domain:
 

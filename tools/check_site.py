@@ -14,6 +14,7 @@ DOMAIN = 'https://www.nibly.ca'
 PAGES = {'index.html': '/', 'the-machine.html': '/the-machine',
          'locations.html': '/locations', 'contact-us.html': '/contact-us',
          'privacy-policy.html': '/privacy-policy'}
+ROUTE_TO_FILE = {route: file_name for file_name, route in PAGES.items()}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
 class Node:
@@ -78,7 +79,13 @@ for name, doc in docs.items():
                 assert key != 'src', (name, 'Remote runtime asset', ref)
                 continue
             assert ref, (name, 'Empty reference')
-            dest = ROOT / unquote(url.path or name)
+            raw_path = unquote(url.path) if url.path else name
+            if raw_path.startswith('/'):
+                file_name = ROUTE_TO_FILE.get(raw_path)
+                assert file_name, (name, 'Unknown route', ref)
+                dest = ROOT / file_name
+            else:
+                dest = ROOT / raw_path
             assert dest.exists(), (name, 'Missing target', ref)
             if url.fragment and dest.name in docs:
                 assert any(n.attrs.get('id') == url.fragment for n in docs[dest.name].find()), (name, ref)

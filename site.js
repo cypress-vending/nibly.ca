@@ -1,5 +1,9 @@
-// The site needs JavaScript only for the mobile menu and, locally, restoring
-// .html on nav links since a plain static server won't rewrite clean URLs.
+// The site needs JavaScript only for the mobile menu and, outside of
+// production, restoring .html on nav links. Only the production domain is
+// expected to rewrite clean URLs server-side; GitHub Pages, local previews
+// and any other host serve the .html files directly, and root-relative
+// clean links there would also resolve against the wrong path (e.g. GitHub
+// Pages serves this site under /nibly.ca/, not /).
 const CLEAN_URL_FILES = {
   "/": "index.html",
   "/the-machine": "the-machine.html",
@@ -7,11 +11,8 @@ const CLEAN_URL_FILES = {
   "/contact-us": "contact-us.html",
   "/privacy-policy": "privacy-policy.html",
 };
-const isLocalPreview =
-  location.hostname === "localhost" ||
-  location.hostname === "127.0.0.1" ||
-  location.port === "4174";
-if (isLocalPreview) {
+const PRODUCTION_HOSTS = ["nibly.ca", "www.nibly.ca"];
+if (!PRODUCTION_HOSTS.includes(location.hostname)) {
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
     const hashIndex = href.indexOf("#");
