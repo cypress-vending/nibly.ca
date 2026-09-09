@@ -644,6 +644,7 @@ button:focus-visible {
 .specifications th { width: 32%; color: var(--lime); }
 .reading-inner .faq { margin: 28px 0; }
 .reading-section.blue .faq summary { color: var(--cream); }
+#buyer-questions .faq summary { font-family: poppins, sans-serif; font-weight: 400; line-height: 1.5; }
 @media (min-width: 768px) {
   #about-nibly .reading-columns { column-gap: 96px; }
 }
