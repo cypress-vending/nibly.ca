@@ -76,7 +76,9 @@ for name, doc in docs.items():
         for key, ref in refs:
             url = urlsplit(ref)
             if url.scheme:
-                assert key != 'src', (name, 'Remote runtime asset', ref)
+                assert key != 'src' or (n.tag == 'script' and
+                    ref == 'https://js.hsforms.net/forms/embed/22691627.js' and
+                    'defer' in n.attrs), (name, 'Unexpected remote runtime asset', ref)
                 continue
             assert ref, (name, 'Empty reference')
             raw_path = unquote(url.path) if url.path else name
