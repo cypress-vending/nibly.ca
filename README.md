@@ -39,8 +39,8 @@ python3 tools/check_site.py --url http://127.0.0.1:4174
 ## Hosting status and launch preparation
 
 This repository currently publishes its `main` branch through GitHub Pages.
-The static-site import is supplied on a separate branch for review. Uploading
-that branch does not replace the current published page or the Squarespace site.
+The static site is published at https://cypress-vending.github.io/nibly.ca/ for
+team review. The Squarespace site and domain DNS remain unchanged.
 
 The canonical URLs, sitemap and production robots.txt target https://www.nibly.ca/.
 They are prepared for an approved future production launch. `routes.txt` is a
@@ -48,7 +48,7 @@ host-neutral mapping used by the local preview, not an automatically applied
 GitHub Pages or other provider configuration. GitHub Pages will serve the relative
 `.html` links, but does not apply this manifest's redirects and clean-URL rewrites.
 
-Before merging for publication or switching the domain:
+Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
 - Decide how to retain, move or retire the existing store, charity and operator
@@ -63,3 +63,19 @@ Before merging for publication or switching the domain:
   canonical URLs and sitemap responses, then verify indexing in webmaster tools.
 
 No deployment workflow, custom domain or DNS change is included in this import.
+
+## robots.txt and llms.txt
+
+`robots.txt` permits all crawlers and references the production sitemap. The
+wildcard includes search bots; no crawler-specific permissions or new training
+restrictions have been introduced. Robots rules are effective only at an origin's
+root `/robots.txt`. The file under the GitHub Pages project path is a preview of
+the production file, not the robots policy for cypress-vending.github.io. See
+[Google's robots.txt location guidance](https://developers.google.com/search/docs/crawling-indexing/robots/create).
+
+`llms.txt` provides a concise public summary and links to the five published
+pages. Relative links resolve alongside the file on GitHub Pages or the future
+production domain. It is an optional content guide, not an access-control file
+or a guarantee of search inclusion or citations. It follows the
+[llms.txt proposal](https://llmstxt.org/). Keep it synchronized with the visible
+pages and update the preview-form note when enquiry delivery is connected.

@@ -1,0 +1,22 @@
+# Nibly
+
+> Nibly is the digital vending brand of Cypress Vending Corp., based in North Vancouver, British Columbia. It offers touchscreen vending machines for buyers and a separate workplace hosting program.
+
+Nibly machines feature a 48-inch touchscreen, cashless payments, remote inventory tracking and real-time sales monitoring. An optional smart locker accommodates products that do not fit standard vending coils. See The Machine for dimensions, capacity and configuration details.
+
+Buyers can enquire about Silver, Gold and Platinum packages, start-up guidance and location advice. Workplace hosts can enquire about having a stocked Nibly machine placed at their location. Buying a machine and hosting one are different arrangements. Confirm pricing, package inclusions, location availability and service responsibilities directly with the team.
+
+Contact: sales@cypressvending.ca or +1 604 638 6078. Office: #204-370 Esplanade East, North Vancouver, BC V7L 1A4, Canada.
+
+The links below refer to the five pages of this static site. On the GitHub Pages preview, enquiry forms display a no-send message; use the published email address or telephone number to contact Nibly. The site has no shopping cart or online checkout.
+
+## Pages
+
+- [Home](index.html): Nibly's company identity, smart vending features, and the distinction between buying and workplace hosting.
+- [The Machine](the-machine.html): Touchscreen vending machine and optional locker specifications, package enquiries, costs to discuss, location advice, support questions and FAQs.
+- [Locations](locations.html): Workplace hosting, stocked machine placement, restocking and how to enquire about availability at a particular location.
+- [Contact Us](contact-us.html): Cypress Vending Corp. attribution, office address, email and telephone details for machine, hosting and support enquiries.
+
+## Optional
+
+- [Privacy Policy](privacy-policy.html): The site's privacy policy and privacy contact details.
