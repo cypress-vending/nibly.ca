@@ -643,6 +643,10 @@ button:focus-visible {
 .specifications th, .specifications td { text-align: left; vertical-align: top; padding: 18px 12px; border-bottom: 1px solid var(--lavender); }
 .specifications th { width: 32%; color: var(--lime); }
 .reading-inner .faq { margin: 28px 0; }
+.reading-section.blue .faq summary { color: var(--cream); }
+@media (min-width: 768px) {
+  #about-nibly .reading-columns { column-gap: 96px; }
+}
 @media (max-width: 767px) {
   .reading-inner { padding: 44px 0; }
   .reading-columns { grid-template-columns: 1fr; gap: 8px; }
