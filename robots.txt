@@ -1,0 +1,6 @@
+# Intended for the approved production site at https://www.nibly.ca/.
+# The local preview server overrides this with Disallow: / and adds noindex.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.nibly.ca/sitemap.xml

@@ -1,0 +1,18 @@
+# Host-neutral route manifest for preview and future hosting configuration.
+# Redirect browser requests for file paths; internally serve the same HTML files.
+/index.html / 301
+/nibly-snacks / 301
+/nibly-snacks/ / 301
+/the-machine.html /the-machine 301
+/the-machine/ /the-machine 301
+/locations.html /locations 301
+/locations/ /locations 301
+/contact-us.html /contact-us 301
+/contact-us/ /contact-us 301
+/privacy-policy.html /privacy-policy 301
+/privacy-policy/ /privacy-policy 301
+/ /index.html 200
+/the-machine /the-machine.html 200
+/locations /locations.html 200
+/contact-us /contact-us.html 200
+/privacy-policy /privacy-policy.html 200
