@@ -1,5 +1,7 @@
-# Intended for the approved production site at https://www.nibly.ca/.
-# The local preview server overrides this with Disallow: / and adds noindex.
+# Nibly public website. Allow search crawlers and other robots.
+# This wildcard also permits OAI-SearchBot, Googlebot, Bingbot and PerplexityBot.
+# Effective only when served at the origin root, e.g. https://www.nibly.ca/robots.txt.
+# The GitHub Pages project copy at /nibly.ca/robots.txt is a deployment preview.
 User-agent: *
 Allow: /
 
