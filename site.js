@@ -38,12 +38,3 @@ document.addEventListener("keydown", (event) => {
 matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
   if (event.matches) setMenu(false);
 });
-document.querySelectorAll(".enquiry-form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const status = form.querySelector(".form-status");
-    status.textContent =
-      "This local preview does not send enquiries. Please email sales@cypressvending.ca or call 604 638 6078.";
-    status.hidden = false;
-  });
-});
