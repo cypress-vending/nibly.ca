@@ -78,5 +78,35 @@
     "path": "/store/p/e-book-starting-funding-a-business-in-canada",
     "file": "store/p/e-book-starting-funding-a-business-in-canada.html",
     "title": "E-Book | Starting & Funding a Business in Canada"
+  },
+  {
+    "path": "/pat",
+    "file": "pat.html",
+    "title": "Pat Nibly Demo"
+  },
+  {
+    "path": "/graham",
+    "file": "graham.html",
+    "title": "Graham Nibly Demo"
+  },
+  {
+    "path": "/jeff",
+    "file": "jeff.html",
+    "title": "Jeff Nibly Demo"
+  },
+  {
+    "path": "/matt",
+    "file": "matt.html",
+    "title": "Matt Nibly Demo"
+  },
+  {
+    "path": "/mackenzie",
+    "file": "mackenzie.html",
+    "title": "Mackenzie Nibly Demo"
+  },
+  {
+    "path": "/travis",
+    "file": "travis.html",
+    "title": "Travis Nibly Demo"
   }
 ]

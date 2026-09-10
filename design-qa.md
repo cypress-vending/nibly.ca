@@ -106,3 +106,57 @@ card spacing can vary across browsers. No broader cross-browser matrix was run.
 - [x] Update sitemap, llms.txt and HubSpot connection instructions.
 - [x] Pass focused checks and independent review.
 - [ ] Team connects and proves service-request delivery through HubSpot.
+
+# Sales representative page extension — September 10, 2026
+
+final result: passed
+
+Six source pages (`/pat`, `/graham`, `/jeff`, `/matt`, `/mackenzie`, `/travis`)
+were compared with the plain-HTML copies at http://127.0.0.1:4179/.
+Evidence is in `/tmp/nibly-reps-source/`: original HTML, source desktop/mobile
+screenshots, corresponding `*-local-*.png` captures, `desktop-comparison.jpg`,
+`mobile-comparison.jpg`, and `jeff-final-focused-pair.png`. Raw screenshots use
+1440×1000 desktop or 390×844 mobile CSS viewports at 1:1 pixel density; full-page
+heights vary. Comparison sheets scale both sides equally. State: initial pages
+with video posters, plus separately exercised playback and existing booking links.
+
+All five fidelity surfaces were checked: existing Piepie/Poppins fonts and source
+sizes/wrapping; exact source grids, spacing and responsive order; original cream,
+blue and gray tokens/hero overlay; source posters/background/video content; and
+original rep names, text, Calendly targets and PDF filenames. Existing header and
+footer are reused without cart UI. The pages remain outside the main navigation.
+
+Repair history:
+
+- P2 source “black” text token: the older helper mapped this to pure black;
+  corrected rep body text to the observed source gray `#86887d`. Final focused
+  source/local comparison confirms matching typography, color and wrapping.
+- P2 Jeff video letterboxing: removed the initial black background and matched
+  the source transparent square frame/top gradient. Final focused comparison
+  confirms the frame and content dimensions. Native player controls are an
+  intentional simplification and differ from Squarespace's player chrome.
+- Video completeness: Matt's first HLS remux collapsed source timestamps;
+  remuxed preserving timestamps. Browser duration now reads 385.342 seconds.
+  Its original audio track ends at 197.397 seconds; the local copy preserves
+  that source limitation. Graham and Jeff use the identical original video.
+
+Verification: all 27 pages pass static and HTTP route checks. All five local demo
+pages played and advanced beyond time zero in-browser, with readyState 4, no
+media error and no desktop horizontal overflow (`playback-proof.json`). Source
+Mackenzie playback also advanced. Desktop/mobile paired visual checks cover all
+six pages. Independent review confirmed all rep-specific URLs/PDF bytes, media
+provenance, metadata and the single exact Travis YouTube embed exception.
+
+Accepted source limitation: Travis embeds “Dog says hello” and has blank booking
+and contact hrefs. The exact video is retained; the two rendered buttons are
+disabled, with no invented destination. Those need source content from the team.
+The five Calendly destinations are preserved exactly; automated HTTP retrieval
+was blocked by Calendly, so appointment availability/delivery is not claimed.
+No appointment was booked and no form was submitted during verification.
+
+P3/coverage limits: native media control styling varies by browser. The 360×640
+source video rendition matches the normal portrait display size; fullscreen
+resolution is lower than the source's optional 1080p stream. Playback smoke
+checks and media metadata inspection do not constitute a full narrated review
+of every second. No broad cross-browser matrix or third-party booking delivery
+verification was performed. No actionable P0/P1/P2 design findings remain.

@@ -66,3 +66,23 @@
 /store/p/e-book-starting-funding-a-business-in-canada.html /store/p/e-book-starting-funding-a-business-in-canada 301
 /store/p/e-book-starting-funding-a-business-in-canada/ /store/p/e-book-starting-funding-a-business-in-canada 301
 /store/p/e-book-starting-funding-a-business-in-canada /store/p/e-book-starting-funding-a-business-in-canada.html 200
+
+# Sales representative demo pages
+/pat.html /pat 301
+/pat/ /pat 301
+/pat /pat.html 200
+/graham.html /graham 301
+/graham/ /graham 301
+/graham /graham.html 200
+/jeff.html /jeff 301
+/jeff/ /jeff 301
+/jeff /jeff.html 200
+/matt.html /matt 301
+/matt/ /matt 301
+/matt /matt.html 200
+/mackenzie.html /mackenzie 301
+/mackenzie/ /mackenzie 301
+/mackenzie /mackenzie.html 200
+/travis.html /travis 301
+/travis/ /travis 301
+/travis /travis.html 200
