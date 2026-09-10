@@ -39,3 +39,12 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Store](store/index.html): Ebook information; online purchasing is unavailable.
 - [E-Book](store/e-book.html): Ebook information; online purchasing is unavailable.
 - [E-Book | Starting & Funding a Business in Canada](store/p/e-book-starting-funding-a-business-in-canada.html): Ebook information; online purchasing is unavailable.
+
+## Sales representative demos
+
+- [Pat Nibly demo](pat.html): Demo video, meeting booking and PDF info kit.
+- [Graham Nibly demo](graham.html): Demo video, meeting booking and PDF info kit.
+- [Jeff Nibly demo](jeff.html): Demo video, meeting booking and PDF info kit.
+- [Matt Nibly demo](matt.html): Demo video, meeting booking and PDF info kit.
+- [Mackenzie Nibly demo](mackenzie.html): Demo video, meeting booking and PDF info kit.
+- [Travis Nibly demo](travis.html): Original unfinished demo page; booking/contact links are not configured.

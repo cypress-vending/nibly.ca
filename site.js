@@ -9,6 +9,13 @@
 // other static server) has no such resolution, so the real .html filename
 // is restored instead.
 const CLEAN_URL_FILES = {
+  "/pat": "pat.html",
+  "/graham": "graham.html",
+  "/jeff": "jeff.html",
+  "/matt": "matt.html",
+  "/mackenzie": "mackenzie.html",
+  "/travis": "travis.html",
+
   "/request": "request.html",
   "/madd": "madd.html",
   "/vendron-touchscreen": "vendron-touchscreen.html",

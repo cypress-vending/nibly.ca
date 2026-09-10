@@ -1,10 +1,10 @@
 # Nibly static website
 
-Twenty-one pages built with plain HTML, CSS and small JavaScript files. The original
+Twenty-seven pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-16 standalone support, service, MADD and ebook pages. `standalone-pages.json`
+22 standalone support, service, MADD, ebook and sales representative pages. `standalone-pages.json`
 lists each additional page and its original URL. Images and fonts are local in
-`assets/`; eight original PDF manuals retain their exact filenames under `s/`.
+`assets/`; 13 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.
 
 ## Preview locally
@@ -103,7 +103,7 @@ Pages project path changes.
 Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
-- Verify all paths in `standalone-pages.json` and the eight `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
+- Verify all paths in `standalone-pages.json` and the 13 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
 - Connect the service request form and decide whether to re-enable donations or ebook sales in a separate change.
 - Confirm the company, package, hosting and support copy with the Nibly team.
 - All enquiry forms now deliver to HubSpot; confirm form routing/notifications
@@ -135,3 +135,22 @@ pages.
 The catalogue uses `store/index.html` so `/store/` works on GitHub Pages alongside
 its nested pages. GitHub Pages may normalize `/store` to `/store/`; the original
 path remains reachable. Production can serve `/store` directly using `routes.txt`.
+
+## Sales representative pages
+
+The original `/pat`, `/graham`, `/jeff`, `/matt`, `/mackenzie` and `/travis` paths
+are retained, without adding them to the main navigation. Five original Calendly
+booking URLs and five rep-specific PDF info kits are preserved. Demo videos use
+native browser controls and local 360×640 MP4 files, remuxed from the source HLS
+streams without re-encoding. Graham and Jeff share the same original video.
+Original posters are local; the shared background matches the source pixels.
+
+Travis's original page is unfinished: it embeds the YouTube video “Dog says
+hello” and supplies no booking/contact destinations. That exact embed is retained
+and the blank-link buttons are disabled. Supply real destinations and a demo
+video in a separate update. Matt's source video runs about 6:25, but its source
+audio track ends around 3:17; the local copy preserves the available source media.
+
+`rep-pages.css` scopes these layouts. No additional player library, Squarespace
+runtime or ecommerce component is included. Native control appearance varies
+by browser; Jeff's square frame retains portrait letterboxing.

@@ -70,7 +70,7 @@ for name, doc in docs.items():
     ids = [n.attrs['id'] for n in doc.find() if 'id' in n.attrs]
     assert len(ids) == len(set(ids)), (name, 'Duplicate id')
     for n in doc.find():
-        assert n.tag != 'iframe', name
+        assert n.tag != 'iframe' or (name == 'travis.html' and n.attrs.get('src') == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected embed')
         refs = [(key, n.attrs[key]) for key in ('src', 'href') if key in n.attrs]
         if 'srcset' in n.attrs:
             refs += [('src', value.strip().split()[0]) for value in n.attrs['srcset'].split(',')]
@@ -79,7 +79,7 @@ for name, doc in docs.items():
             if url.scheme:
                 assert key != 'src' or (n.tag == 'script' and
                     ref == 'https://js.hsforms.net/forms/embed/22691627.js' and
-                    'defer' in n.attrs), (name, 'Unexpected remote runtime asset', ref)
+                    'defer' in n.attrs) or (name == 'travis.html' and n.tag == 'iframe' and ref == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected remote runtime asset', ref)
                 continue
             assert ref, (name, 'Empty reference')
             raw_path = unquote(url.path) if url.path else name
@@ -133,8 +133,8 @@ assert all(n.attrs.get('type') != 'submit' for n in form.find('button'))
 assert {n.attrs.get('name') for n in form.find('input') if 'required' in n.attrs} == {'machine_number', 'request_details'}
 for path in ROOT.glob('s/*.pdf'):
     assert path.read_bytes().startswith(b'%PDF'), path
-assert len(list(ROOT.glob('s/*.pdf'))) == 8
-print('PASS: 21 pages, unique metadata, H1s, local assets/anchors, graph references, visible FAQ parity and sitemap.')
+assert len(list(ROOT.glob('s/*.pdf'))) == 13
+print(f'PASS: {len(PAGES)} pages, unique metadata, H1s, local assets/anchors, graph references, visible FAQ parity and sitemap.')
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--url', help='Local preview origin, e.g. http://127.0.0.1:4174')
