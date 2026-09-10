@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dependency-free checks for the five-page site; optionally verify preview HTTP routes."""
+"""Dependency-free checks for the static site; optionally verify preview HTTP routes."""
 import argparse
 import http.client
 import json
@@ -14,6 +14,7 @@ DOMAIN = 'https://www.nibly.ca'
 PAGES = {'index.html': '/', 'the-machine.html': '/the-machine',
          'locations.html': '/locations', 'contact-us.html': '/contact-us',
          'privacy-policy.html': '/privacy-policy'}
+PAGES.update({item['file']: item['path'] for item in json.loads((ROOT / 'standalone-pages.json').read_text())})
 ROUTE_TO_FILE = {route: file_name for file_name, route in PAGES.items()}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
@@ -56,7 +57,7 @@ class Document(HTMLParser):
 
 normalize = lambda s: re.sub(r'\s+', ' ', s).strip()
 docs = {name: Document((ROOT / name).read_text()).root for name in PAGES}
-assert {p.name for p in ROOT.glob('*.html')} == set(PAGES), 'Unexpected public page'
+assert {str(p.relative_to(ROOT)) for p in ROOT.rglob('*.html') if '.git' not in p.parts} == set(PAGES), 'Unexpected public page'
 titles, descriptions, canonical_urls = set(), set(), set()
 for name, doc in docs.items():
     assert len(doc.find('main')) == 1 and len(doc.find('h1')) == 1, name
@@ -83,14 +84,14 @@ for name, doc in docs.items():
             assert ref, (name, 'Empty reference')
             raw_path = unquote(url.path) if url.path else name
             if raw_path.startswith('/'):
-                file_name = ROUTE_TO_FILE.get(raw_path)
+                file_name = ROUTE_TO_FILE.get(raw_path) or (raw_path.lstrip('/') if raw_path.startswith('/s/') else None)
                 assert file_name, (name, 'Unknown route', ref)
                 dest = ROOT / file_name
             else:
-                dest = ROOT / raw_path
+                dest = ((ROOT / name).parent / raw_path).resolve() if url.path else ROOT / name
             assert dest.exists(), (name, 'Missing target', ref)
-            if url.fragment and dest.name in docs:
-                assert any(n.attrs.get('id') == url.fragment for n in docs[dest.name].find()), (name, ref)
+            if url.fragment and str(dest.relative_to(ROOT)) in docs:
+                assert any(n.attrs.get('id') == url.fragment for n in docs[str(dest.relative_to(ROOT))].find()), (name, ref)
     scripts = [n for n in doc.find('script') if n.attrs.get('type') == 'application/ld+json']
     assert len(scripts) == 1, name
     graph = json.loads(scripts[0].text())['@graph']
@@ -124,7 +125,16 @@ sitemap = ET.parse(ROOT / 'sitemap.xml')
 assert {n.text for n in sitemap.findall('.//{*}loc')} == canonical_urls, 'Sitemap/canonical mismatch'
 robots = (ROOT / 'robots.txt').read_text()
 assert 'User-agent: *\nAllow: /' in robots and DOMAIN + '/sitemap.xml' in robots
-print('PASS: five pages, unique metadata, H1s, local assets/anchors, graph references, visible FAQ parity and sitemap.')
+request_doc = docs['request.html']
+form = request_doc.find('form')[0]
+assert not form.attrs.get('action'), 'Service form must have no submission endpoint'
+assert any(n.attrs.get('http-equiv') == 'Content-Security-Policy' and n.attrs.get('content') == "form-action 'none'" for n in request_doc.find('meta')), 'Unwired service form must block native submissions too'
+assert all(n.attrs.get('type') != 'submit' for n in form.find('button'))
+assert {n.attrs.get('name') for n in form.find('input') if 'required' in n.attrs} == {'machine_number', 'request_details'}
+for path in ROOT.glob('s/*.pdf'):
+    assert path.read_bytes().startswith(b'%PDF'), path
+assert len(list(ROOT.glob('s/*.pdf'))) == 8
+print('PASS: 21 pages, unique metadata, H1s, local assets/anchors, graph references, visible FAQ parity and sitemap.')
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--url', help='Local preview origin, e.g. http://127.0.0.1:4174')
@@ -152,7 +162,7 @@ if args.url:
         else:
             assert body == (ROOT / target.lstrip('/')).read_bytes(), source
     assert request('/not-a-real-page')[0] == 404
-    for path in ['/store', '/madd', '/request', '/ops-manual']:
+    for path in ['/cart', '/checkout', '/search']:
         assert request(path)[0] == 404, ('Excluded route unexpectedly remapped', path)
     assert b'Disallow: /' in request('/robots.txt')[2]
     print('PASS: canonical routes, 301 aliases, query preservation, actual HTML responses, 404s and preview noindex.')

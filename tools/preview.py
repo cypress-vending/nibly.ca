@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local-only preview of the five-page static site and its proposed URL mapping.
+"""Local-only preview of the static site and its proposed URL mapping.
 No production backend is needed; translate routes.txt on the chosen static host.
 """
 import argparse

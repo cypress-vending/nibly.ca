@@ -1,0 +1,105 @@
+/* Source-matched standalone pages. The five original pages keep styles.css. */
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.standalone main>.panel:first-of-type{padding-top:var(--header-height)}
+.standalone .white{background:var(--cream);color:#86887d}
+.standalone .white h2,.standalone .white .copy a{color:var(--lavender)}
+.standalone .bright-inverse{--overlay-color:var(--blue);color:var(--cream)}
+.standalone .bright-inverse h2{color:var(--cream)}
+.standalone .request-socials .socials{justify-content:flex-start}
+.standalone .request-socials .socials a{width:54px;height:54px}
+.introducing{container-type:inline-size}.introducing h1{font-size:13.78cqw;line-height:1;margin:0;color:var(--cream)}
+.service-request-form{width:100%;margin:0;color:var(--cream)}
+.service-request-form fieldset{border:0;padding:0;margin:0 0 20px;min-width:0}
+.service-request-form legend{padding:0 0 4px;margin-bottom:20px}
+.name-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.name-fields label{font-size:16px;line-height:1.8}
+.name-fields input{margin-top:6px!important}
+.service-request-form .request-field{margin-bottom:20px}
+.service-request-form label{display:block;padding-bottom:4px}
+.service-request-form input,.service-request-form select{display:block;width:100%;min-width:0;border:1px solid #000;border-radius:0;background:#fafafa;color:#000;padding:10px;margin:0;font:inherit;line-height:1.8}
+.service-request-form select{font-size:16px;line-height:1.8;padding-right:32px;height:50.8px}
+.service-request-form small{font-size:16px}
+.service-request-form .field-description{font-size:16px;line-height:1.8;padding:8px 0;margin:0 0 4px}
+.service-request-form .button{border:0;line-height:1.6;margin-top:24px}
+.connection-note{font:16px/1.6 poppins,sans-serif;margin:12px 0 0}.connection-note a{color:inherit}
+[aria-disabled=true]{cursor:not-allowed}
+.ebook-card a{text-decoration:none}.ebook-cover{display:block;position:relative}
+.ebook-cover img{width:100%;height:100%;object-fit:cover}
+.landing-card{text-align:center;font-size:20px;line-height:1.7}
+.landing-card .ebook-cover{aspect-ratio:3/4;overflow:hidden;border-radius:30px}
+.landing-card .ebook-title{display:block;margin-top:14px;color:#86887d}
+.landing-card .ebook-price{font-size:16px;margin:10px 0 16px}
+.sale-badge{position:absolute;right:0;top:16px;background:#222;color:white;font:20px/1 poppins;padding:6px 8px}
+.ebook-button{background:var(--blue);color:white;min-height:55px;padding:0 20px;border:0;width:100%;letter-spacing:normal;line-height:1.2}
+.store-page{background:var(--cream);color:#86887d}
+.store-page .site-header{color:#86887d}.store-page .mobile-nav{color:var(--cream)}
+.store-page .footer{color:var(--cream)}
+.catalogue{padding:calc(var(--header-height) + 20px) 5vw 3vw;background:var(--cream)}
+.catalogue h1{font-size:calc(16px + 3.2 * var(--unit));line-height:1.2208;color:#86887d;text-align:center;margin:0}
+.catalogue>nav{text-align:center;margin:20px 0 12px}.catalogue>nav a{text-decoration:none}
+.catalogue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2vw}
+.catalogue-card .ebook-cover{aspect-ratio:1}
+.catalogue-card .ebook-title{display:block;font-family:piepie,sans-serif;line-height:1.4;color:var(--blue);margin-top:20px}
+.catalogue-card .ebook-price{font-family:piepie,sans-serif;font-size:calc(16px + .1 * var(--unit));line-height:1;margin-top:8px;color:var(--blue)}
+.catalogue-sale{font-family:piepie,sans-serif;color:var(--lime);font-size:calc(16px + .1 * var(--unit));line-height:1.6}
+.ebook-detail{padding:calc(var(--header-height) + 3vw) 5vw 3vw;background:var(--cream)}
+.breadcrumbs{margin-bottom:28px}.breadcrumbs a{text-decoration:none}
+.ebook-detail-grid{display:grid;grid-template-columns:50% 1fr;gap:3vw}
+.ebook-gallery{display:grid;grid-template-columns:50px 1fr;gap:10px;align-self:start}
+.gallery-thumbnails{display:flex;flex-direction:column;gap:10px}.gallery-thumbnails button{width:50px;height:81.66px;padding:0;background:none;border:0;display:flex;align-items:flex-start}
+.gallery-thumbnails img{width:50px;height:66.67px;object-fit:cover}
+.gallery-main{position:relative;aspect-ratio:3/4}.gallery-main>img{height:100%;width:100%;object-fit:cover}
+.gallery-main button{position:absolute;top:50%;transform:translateY(-50%);width:4.4vw;height:4.4vw;min-width:50px;min-height:50px;padding:0;background:none;border:0;display:flex;align-items:center;justify-content:center}
+.gallery-previous{left:1.5vw}.gallery-next{right:1.5vw}
+/* The source gallery draws its control marks with these same CSS borders. */
+.gallery-main button::after{content:"";display:block;width:3vw;height:3vw;border-top:1px solid #000;border-right:1px solid #000}
+.gallery-previous::after{transform:rotate(-135deg)}.gallery-next::after{transform:rotate(45deg)}
+.gallery-counter{display:none}
+.ebook-details h1{font-size:calc(16px + 3.2 * var(--unit));line-height:1.4;color:var(--blue);margin:0}
+.detail-price{font-family:piepie,sans-serif;color:var(--blue);line-height:1.4;margin:8px 0 30px}
+.ebook-description p:first-child{margin-top:0}.ebook-description p:last-child{margin-bottom:16px}
+@media(max-width:767px){
+ .landing-card .ebook-cover{border-radius:0}
+ .catalogue{padding:calc(var(--header-height) + 20px) 6vw 6vw}
+ .catalogue h1{display:none}.catalogue>nav{margin:0 0 20px;font-size:16px}
+ .catalogue-grid{grid-template-columns:1fr}
+ .catalogue-card .ebook-title{margin-top:10px}
+ .catalogue-card .ebook-price{margin-top:8px}
+ .ebook-button{min-height:48px}
+ .ebook-detail{padding:calc(var(--header-height) + 24px) 6vw 12px}
+ .breadcrumbs{display:none}.ebook-detail-grid{display:block}
+ .ebook-gallery{display:block}.gallery-thumbnails{display:none}
+ .gallery-main button{width:50px;height:50px}.gallery-counter{display:block;position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:16px;color:white}
+ .ebook-details{display:flex;flex-direction:column;margin-top:22px}
+ .ebook-description{order:4;margin-top:16px}.purchase-disabled{order:3}
+ .detail-price{margin:8px 0 22px}.ebook-description p:last-child{margin-bottom:0}
+}
+.standalone .small-height .panel-inner{padding:3.3vmax 0}
+.standalone .bright-inverse{--overlay-color:#000}
+.standalone .copy a{text-decoration-thickness:1px;text-decoration-skip-ink:none}
+.starting-and-funding-a-business-in-canada .custom-height .panel-inner{padding:.5vmax 0}
+.standalone .copy{overflow-wrap:break-word}
+.name-fields input{font-size:calc(16px + .6 * var(--unit))}
+.standalone{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.standalone h2 a{text-underline-offset:.2em}
+@media(min-width:768px){.catalogue-filtered>nav{display:none}.catalogue-filtered h1{margin-bottom:12px}}
+@media(max-width:767px){.gallery-counter{top:24px;right:24px;bottom:auto;left:auto;transform:none;color:#000}}
+.introducing h1{font-size:13.7cqw;white-space:nowrap!important;overflow-wrap:normal}
+.starting-and-funding-a-business-in-canada .site-header{color:var(--cream)}
+.service-request-form legend{margin-bottom:0}
+.mobile-category{display:none}
+.standalone .footer .socials img{transform:scale(1.5)}
+@media(max-width:767px){
+ .catalogue{padding:calc(var(--header-height) + 2vmax) 6vw 3.3vmax}
+ .catalogue h1{display:block;text-align:left}
+ .catalogue>nav{display:none}
+ .mobile-category{display:flex;align-items:center;gap:8px;font:16px/1.4 poppins,sans-serif;margin:18px 0}
+ .mobile-category select{min-width:0;flex:1;height:48px;background:#fafafa;border:1px solid #000;border-radius:0;padding:8px 16px;font:16px poppins,sans-serif;color:#666}
+ .catalogue-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+ .catalogue .ebook-button{min-height:55px;padding:0 10px;white-space:nowrap}
+}
+@media(max-width:767px){
+ .catalogue-card .ebook-title{margin-top:6px}
+ .mobile-category select{appearance:none;padding-right:42px;background:#fafafa url(assets/select-chevron.svg) right 16px center/18px 12px no-repeat}
+ .catalogue-filtered .mobile-category select{color:#000}
+}

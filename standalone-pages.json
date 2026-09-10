@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/request",
+    "file": "request.html",
+    "title": "Request Product & Service"
+  },
+  {
+    "path": "/madd",
+    "file": "madd.html",
+    "title": "Madd Canada Partnership"
+  },
+  {
+    "path": "/vendron-touchscreen",
+    "file": "vendron-touchscreen.html",
+    "title": "Vendron Touchscreen"
+  },
+  {
+    "path": "/vendron-exit",
+    "file": "vendron-exit.html",
+    "title": "Vendron Exit"
+  },
+  {
+    "path": "/streampay-installation",
+    "file": "streampay-installation.html",
+    "title": "Stream Pay Installation"
+  },
+  {
+    "path": "/streampay-portal",
+    "file": "streampay-portal.html",
+    "title": "Streampay Portal"
+  },
+  {
+    "path": "/quick-start-supplement",
+    "file": "quick-start-supplement.html",
+    "title": "Quick Start Supplement"
+  },
+  {
+    "path": "/vendron-setup",
+    "file": "vendron-setup.html",
+    "title": "Vendron Setup"
+  },
+  {
+    "path": "/product-loading",
+    "file": "product-loading.html",
+    "title": "Product Loading"
+  },
+  {
+    "path": "/start-up-grid",
+    "file": "start-up-grid.html",
+    "title": "Start Up Grid"
+  },
+  {
+    "path": "/ops-manual",
+    "file": "ops-manual.html",
+    "title": "Operations Manual"
+  },
+  {
+    "path": "/quick-start-guide",
+    "file": "quick-start-guide.html",
+    "title": "Quick Start Guide"
+  },
+  {
+    "path": "/starting-and-funding-a-business-in-canada",
+    "file": "starting-and-funding-a-business-in-canada.html",
+    "title": "Starting and Funding a Business in Canada"
+  },
+  {
+    "path": "/store",
+    "file": "store/index.html",
+    "title": "Store"
+  },
+  {
+    "path": "/store/e-book",
+    "file": "store/e-book.html",
+    "title": "E-Book"
+  },
+  {
+    "path": "/store/p/e-book-starting-funding-a-business-in-canada",
+    "file": "store/p/e-book-starting-funding-a-business-in-canada.html",
+    "title": "E-Book | Starting & Funding a Business in Canada"
+  }
+]

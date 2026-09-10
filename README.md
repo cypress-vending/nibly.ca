@@ -1,9 +1,11 @@
 # Nibly static website
 
-Five public pages built with plain HTML, CSS and a small JavaScript file:
-Home, The Machine, Locations, Contact Us and Privacy Policy. Original images and
-fonts are stored locally in `assets/`. No package installation or build step is
-required. There is no shopping cart, checkout, database or Squarespace runtime.
+Twenty-one pages built with plain HTML, CSS and small JavaScript files. The original
+Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
+16 standalone support, service, MADD and ebook pages. `standalone-pages.json`
+lists each additional page and its original URL. Images and fonts are local in
+`assets/`; eight original PDF manuals retain their exact filenames under `s/`.
+There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.
 
 ## Preview locally
 
@@ -29,10 +31,35 @@ form. Email and telephone links use the published Nibly contact details.
 
 ## Editing and checks
 
-Edit the five HTML files directly. Shared styling is in `styles.css`; `site.js`
-now only handles the mobile menu. Its local form-feedback code was removed
-when the enquiry forms were replaced with the HubSpot embed. The inherited
-`scripts.js` is unused by the new pages. The existing favicon is retained.
+Edit the HTML files directly. Shared styling is in `styles.css`; additions are
+scoped to `standalone.css`. `site.js` handles the mobile menu and host-aware URLs;
+`standalone.js` handles the ebook gallery and the disconnected service form.
+Keep `standalone-pages.json`, `routes.txt`, `sitemap.xml` and `llms.txt` synchronized
+when adding or removing a page.
+
+### Connecting the service request form
+
+`request.html` contains `#service-request-form` with the original fields, including
+required `machine_number` and `request_details`. It is deliberately disconnected.
+The Submit control is inactive, Enter is intercepted, and a page-specific
+`Content-Security-Policy` (`form-action 'none'`) blocks even native form submits.
+No request data is stored or sent. The visible note directs visitors to email.
+
+Replace that form with your dedicated HubSpot form embed, or wire its fields
+using the desired HubSpot integration. Then remove the form-action meta policy
+if your integration needs native form submission, the disconnected-form code in
+`standalone.js`, the inactive button attributes and the connection note. Update
+`tools/check_site.py` with the exact intended HubSpot integration and verify a
+real submission and delivery before enabling it. Existing sales enquiry embeds
+on the four original pages are unchanged.
+
+### Standalone functionality
+
+The MADD page retains its original content and layout but has no PayPal buttons
+or scripts. The ebook catalogue links to its detail page and its three-image
+gallery works; its purchase button is inactive with an explanation. No online
+purchase is available. `/streampay-portal` and `/vendron-setup` intentionally retain
+the source site's unfinished “Title” placeholder content.
 
 Metadata and JSON-LD are inline in the HTML. Keep structured data consistent with
 visible content, particularly the questions and answers on The Machine page.
@@ -76,9 +103,8 @@ Pages project path changes.
 Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
-- Decide how to retain, move or retire the existing store, charity and operator
-  support URLs, which are outside this five-page site. Do not redirect them all
-  to Home.
+- Verify all paths in `standalone-pages.json` and the eight `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
+- Connect the service request form and decide whether to re-enable donations or ebook sales in a separate change.
 - Confirm the company, package, hosting and support copy with the Nibly team.
 - All enquiry forms now deliver to HubSpot; confirm form routing/notifications
   are configured in the HubSpot portal and review the inherited privacy policy
@@ -99,10 +125,13 @@ root `/robots.txt`. The file under the GitHub Pages project path is a preview of
 the production file, not the robots policy for cypress-vending.github.io. See
 [Google's robots.txt location guidance](https://developers.google.com/search/docs/crawling-indexing/robots/create).
 
-`llms.txt` provides a concise public summary and links to the five published
+`llms.txt` provides a concise public summary and links to all published
 pages. Relative links resolve alongside the file on GitHub Pages or the future
 production domain. It is an optional content guide, not an access-control file
 or a guarantee of search inclusion or citations. It follows the
 [llms.txt proposal](https://llmstxt.org/). Keep it synchronized with the visible
-pages. Its preview-form note still describes the old no-send behavior and needs
-updating now that the Home page enquiry form delivers to HubSpot.
+pages.
+
+The catalogue uses `store/index.html` so `/store/` works on GitHub Pages alongside
+its nested pages. GitHub Pages may normalize `/store` to `/store/`; the original
+path remains reachable. Production can serve `/store` directly using `routes.txt`.
