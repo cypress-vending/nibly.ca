@@ -8,7 +8,7 @@ Buyers can enquire about Silver, Gold and Platinum packages, start-up guidance a
 
 Contact: sales@cypressvending.ca or +1 604 638 6078. Office: #204-370 Esplanade East, North Vancouver, BC V7L 1A4, Canada.
 
-The links below refer to the five pages of this static site. On the GitHub Pages preview, enquiry forms display a no-send message; use the published email address or telephone number to contact Nibly. The site has no shopping cart or online checkout.
+The main sales enquiry forms connect to HubSpot. The separate service request form is not yet accepting submissions; use the published email address or telephone number for assistance. The site has no shopping cart, online checkout or PayPal donation functionality.
 
 ## Pages
 
@@ -20,3 +20,22 @@ The links below refer to the five pages of this static site. On the GitHub Pages
 ## Optional
 
 - [Privacy Policy](privacy-policy.html): The site's privacy policy and privacy contact details.
+
+## Standalone pages and operator resources
+
+- [Request Product & Service](request.html): Product and service request form; submissions are not connected yet.
+- [Madd Canada Partnership](madd.html): Partnership information; online donation controls are omitted.
+- [Vendron Touchscreen](vendron-touchscreen.html): Links to the original downloadable PDF manual.
+- [Vendron Exit](vendron-exit.html): Links to the original downloadable PDF manual.
+- [Stream Pay Installation](streampay-installation.html): Links to the original downloadable PDF manual.
+- [Streampay Portal](streampay-portal.html): Placeholder page retained from the original site; no manual content is available here yet.
+- [Quick Start Supplement](quick-start-supplement.html): Links to the original downloadable PDF manual.
+- [Vendron Setup](vendron-setup.html): Placeholder page retained from the original site; no manual content is available here yet.
+- [Product Loading](product-loading.html): Links to the original downloadable PDF manual.
+- [Start Up Grid](start-up-grid.html): Links to the original downloadable PDF manual.
+- [Operations Manual](ops-manual.html): Links to the original downloadable PDF manual.
+- [Quick Start Guide](quick-start-guide.html): Links to the original downloadable PDF manual.
+- [Starting and Funding a Business in Canada](starting-and-funding-a-business-in-canada.html): Ebook information; online purchasing is unavailable.
+- [Store](store/index.html): Ebook information; online purchasing is unavailable.
+- [E-Book](store/e-book.html): Ebook information; online purchasing is unavailable.
+- [E-Book | Starting & Funding a Business in Canada](store/p/e-book-starting-funding-a-business-in-canada.html): Ebook information; online purchasing is unavailable.

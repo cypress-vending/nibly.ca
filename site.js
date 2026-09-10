@@ -9,6 +9,23 @@
 // other static server) has no such resolution, so the real .html filename
 // is restored instead.
 const CLEAN_URL_FILES = {
+  "/request": "request.html",
+  "/madd": "madd.html",
+  "/vendron-touchscreen": "vendron-touchscreen.html",
+  "/vendron-exit": "vendron-exit.html",
+  "/streampay-installation": "streampay-installation.html",
+  "/streampay-portal": "streampay-portal.html",
+  "/quick-start-supplement": "quick-start-supplement.html",
+  "/vendron-setup": "vendron-setup.html",
+  "/product-loading": "product-loading.html",
+  "/start-up-grid": "start-up-grid.html",
+  "/ops-manual": "ops-manual.html",
+  "/quick-start-guide": "quick-start-guide.html",
+  "/starting-and-funding-a-business-in-canada": "starting-and-funding-a-business-in-canada.html",
+  "/store": "store/index.html",
+  "/store/e-book": "store/e-book.html",
+  "/store/p/e-book-starting-funding-a-business-in-canada": "store/p/e-book-starting-funding-a-business-in-canada.html",
+
   "/": "index.html",
   "/the-machine": "the-machine.html",
   "/locations": "locations.html",
@@ -29,7 +46,7 @@ function splitHash(href) {
 if (location.hostname === GITHUB_PAGES_HOST) {
   document.querySelectorAll("a[href]").forEach((link) => {
     const [path, hash] = splitHash(link.getAttribute("href"));
-    if (path in CLEAN_URL_FILES) {
+    if (path in CLEAN_URL_FILES || path.startsWith("/s/")) {
       link.setAttribute("href", GITHUB_PAGES_BASE + path + hash);
     }
   });
@@ -37,7 +54,10 @@ if (location.hostname === GITHUB_PAGES_HOST) {
   document.querySelectorAll("a[href]").forEach((link) => {
     const [path, hash] = splitHash(link.getAttribute("href"));
     const file = CLEAN_URL_FILES[path];
-    if (file) link.setAttribute("href", file + hash);
+    if (file || path.startsWith("/s/")) {
+      const root = new URL(".", document.querySelector('script[src$="site.js"]').src);
+      link.setAttribute("href", new URL((file || path.slice(1)) + hash, root).href);
+    }
   });
 }
 const toggle = document.querySelector(".menu-toggle");
