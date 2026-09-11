@@ -67,6 +67,17 @@ if (location.hostname === GITHUB_PAGES_HOST) {
     }
   });
 }
+
+// pass url parameters around the website.  especially useful for utm parameters.
+const querystring = location.search.substring(1);
+if (querystring) {
+  document.querySelectorAll("a[href]").forEach((anchor) => {
+    const href = anchor.getAttribute("href");
+    anchor.setAttribute("href", href + (href.includes("?") ? "&" : "?") + querystring);
+  });
+}
+
+
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector("#mobile-nav");
 function setMenu(open) {
