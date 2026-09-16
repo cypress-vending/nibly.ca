@@ -1,0 +1,32 @@
+[
+  {
+    "page": "/ops-manual",
+    "file": "s/Nibly_OperationManual_8p5x11_v6sm.pdf",
+    "sha256": "f7b9f24487e87c7a61fbb0fec638f30820e8472a9fb827b88ecbb82f91b04d23",
+    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_OperationManual_8p5x11_v6sm.pdf"
+  },
+  {
+    "page": "/streampay-installation",
+    "file": "s/Nibly_StreamPay_8p5x11.pdf",
+    "sha256": "2404ff84818efbf16feafb414afeed1e06da3e86642fb6946c031cc5fa667d48",
+    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_StreamPay_8p5x11.pdf"
+  },
+  {
+    "page": "/vendron-touchscreen",
+    "file": "s/Nibly_VendronTouchscreen.pdf",
+    "sha256": "8a6daff853ab5f228c2c33f828d8e9b565f91d0a2fd0d51a4e43beb36e4c374b",
+    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_VendronTouchscreen.pdf"
+  },
+  {
+    "page": "/product-loading",
+    "file": "s/Nibly_ProductLoading.pdf",
+    "sha256": "349db563b86c712ea91a3e9638da0c79c66257240137e5210f69d7a185328d5d",
+    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_ProductLoading.pdf"
+  },
+  {
+    "page": "/start-up-grid",
+    "file": "s/Nibly_StartUpGrids.pdf",
+    "sha256": "f9cd2a87f88d77837cfeb2b9c605afe3352e9dc374208b537151b83c76b9f9ff",
+    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_StartUpGrids.pdf"
+  }
+]
