@@ -44,7 +44,7 @@
     </section>
     <section class="panel blue medium-height middle" id="contact-us">
       <div class="panel-inner">
-        <div class="grid" style="--rows:24;--mobile-rows:57">
+        <div class="grid" style="--rows:36;--mobile-rows:57">
           <div class="block text" style="--mobile:1/2/10/10;--desktop:1/2/9/14;--align:flex-start;--mobile-align:flex-start">
             <div class="copy">
               <h2 style="white-space:pre-wrap">Got a craving? Something not behaving?</h2>
@@ -55,7 +55,41 @@
               <p style="white-space:pre-wrap">Request new products or report an issue in seconds. Just share your machine number and we’ll handle the rest.</p>
             </div>
           </div>
-          <div class="block hs-form-frame" style="--mobile:15/2/55/10;--desktop:1/15/25/26;--align:flex-start;--mobile-align:flex-start" data-region="na1" data-form-id="2ff4c7dd-449f-469a-a5b1-68c8db99fb0a" data-portal-id="22691627"></div>
+          <div class="block service-form-block" style="--mobile:15/2/55/10;--desktop:1/16/37/25;--align:flex-start;--mobile-align:flex-start"><!-- Replace this form with the dedicated HubSpot service request form when ready. No submission endpoint is configured. -->
+            <form id="service-request-form" class="service-request-form" aria-describedby="request-connection-note">
+              <fieldset class="request-name">
+                <legend>Name</legend>
+                <div class="name-fields"><label>First Name<input type="text" name="firstname" autocomplete="given-name"></label><label>Last Name<input type="text" name="lastname" autocomplete="family-name"></label></div>
+              </fieldset>
+              <div class="request-field"><label for="request-email">Email</label><input id="request-email" name="email" type="email"></div>
+              <div class="request-field"><label for="request-address">Street Address</label><input id="request-address" name="address" type="text"></div>
+              <div class="request-field"><label for="request-company">Company Name</label><input id="request-company" name="company" type="text"></div>
+              <div class="request-field"><label for="request-city">City</label><input id="request-city" name="city" type="text"></div>
+              <div class="request-field"><label for="request-state">Province</label><select id="request-state" name="state">
+                  <option value="British Columbia">British Columbia</option>
+                  <option value="Alberta">Alberta</option>
+                  <option value="Saskatchewan">Saskatchewan</option>
+                  <option value="Manitoba">Manitoba</option>
+                  <option value="Ontario">Ontario</option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="New Brunswick">New Brunswick</option>
+                  <option value="Newfoundland &amp; Labrador">Newfoundland &amp; Labrador</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
+                  <option value="Prince Edward Island">Prince Edward Island</option>
+                  <option value="Yukon">Yukon</option>
+                </select></div>
+              <div class="request-field"><label for="request-machine_number">Machine Number <small>(required)</small></label><input id="request-machine_number" name="machine_number" required type="text"></div>
+              <div class="request-field"><label for="request-request_type">Type of Request</label>
+                <p class="field-description" id="request-request_type-help">Use &quot;Product Request&quot; to request your favourite snacks and drinks in your local Nibly machine. Use &quot;Service Request&quot; for machine stocking or maintenance.</p><select id="request-request_type" name="request_type" aria-describedby="request-request_type-help">
+                  <option value="Select an option" disabled selected hidden>Select an option</option>
+                  <option value="Product Request">Product Request</option>
+                  <option value="Service Request">Service Request</option>
+                </select>
+              </div>
+              <div class="request-field"><label for="request-request_details">Request Details <small>(required)</small></label><input id="request-request_details" name="request_details" required type="text"></div><button type="button" class="button" id="request-submit" aria-disabled="true" aria-describedby="request-connection-note">Submit</button>
+              <p class="connection-note" id="request-connection-note" role="status">This form is not accepting submissions yet. Please contact <a href="mailto:sales@cypressvending.ca">sales@cypressvending.ca</a> for assistance.</p>
+            </form>
+          </div>
           <div class="block request-socials" style="--mobile:56/2/58/10;--desktop:15/2/17/12;--align:center;--mobile-align:center">
             <nav class="socials" aria-label="Social media"><a href="https://instagram.com/niblysnacks" aria-label="Instagram"><img src="assets/instagram.svg" alt=""></a><a href="https://www.facebook.com/niblysnacks" aria-label="Facebook"><img src="assets/facebook.svg" alt=""></a></nav>
           </div>
@@ -134,7 +168,6 @@
     </div>
   </footer>
   <!-- Start of HubSpot Embed Code -->
-  <script src="https://js.hsforms.net/forms/embed/22691627.js" defer></script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/22691627.js"></script>
   <!-- End of HubSpot Embed Code -->
 </body>
