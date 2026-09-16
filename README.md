@@ -141,15 +141,17 @@ path remains reachable. Production can serve `/store` directly using `routes.txt
 The original `/pat`, `/graham`, `/jeff`, `/matt`, `/mackenzie` and `/travis` paths
 are retained, without adding them to the main navigation. Five original Calendly
 booking URLs and five rep-specific PDF info kits are preserved. Demo videos use
-native browser controls and local 360×640 MP4 files, remuxed from the source HLS
-streams without re-encoding. Graham and Jeff share the same original video.
+native browser controls and local MP4 files. Pat, Graham and Jeff retain the
+360×640 source HLS copies. Matt and Mackenzie use 720×1280 H.264/AAC copies of
+the replacement camera originals supplied on September 16, 2026, with web
+streaming metadata at the front of each file. Graham and Jeff share the same original video.
 Original posters are local; the shared background matches the source pixels.
 
 Travis's original page is unfinished: it embeds the YouTube video “Dog says
 hello” and supplies no booking/contact destinations. That exact embed is retained
 and the blank-link buttons are disabled. Supply real destinations and a demo
-video in a separate update. Matt's source video runs about 6:25, but its source
-audio track ends around 3:17; the local copy preserves the available source media.
+video in a separate update. Matt's replacement is approximately 3:17 and
+Mackenzie's is 4:15; each has audio covering the full clip.
 
 `rep-pages.css` scopes these layouts. No additional player library, Squarespace
 runtime or ecommerce component is included. Native control appearance varies
