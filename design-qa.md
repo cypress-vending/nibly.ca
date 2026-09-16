@@ -199,3 +199,23 @@ Verified source SHA-256 hashes:
 | Jeff | Nibly-InfoPackPricing-8p5x11_Jeff.pdf | 02eb3e8d646d1c4650e5e9def2656f1bd851f2fb93e4da42aa4ca1ca52a3f9b6 |
 | Matt | Nibly-InfoPackPricing-8p5x11_Matt.pdf | c8dae82b9cffa5fb5417a964b46c377035b9c1d90074bdd8389da23ebad26801 |
 | Mackenzie | Nibly-InfoPackPricing-8p5x11_Mackenzie.pdf | 9958e75aef9db27c0d1c0c3d6c4de00610db0cb5c2aad326fafe6a2751939afa |
+
+## Matt and Mackenzie replacement videos - 2026-09-16
+
+Replaced only Matt's and Mackenzie's videos using the camera files supplied by
+Adam: `IMG_0234.mov` (Drive file `1rpia3BQlZF6VuycTYbChp_n52OsBh_Rz`) and
+`IMG_2691.MOV` (Drive file `1ZLTTS_f2uyUJtVYzCn39G55BTFLCAHDq`), respectively.
+The originals remain outside the public repository. New versioned filenames
+avoid serving the old video or poster from browser caches.
+
+Both web copies are portrait 720x1280 H.264/AAC MP4s with fast-start metadata,
+native controls and fresh posters extracted one second into their own video.
+Matt's HLG/BT.2020 camera footage was converted to BT.709 using VideoToolbox;
+Mackenzie's camera rotation was applied during encoding. Neither was trimmed.
+Matt: 197.332 seconds, 63,131,015 bytes. Mackenzie: 254.868 seconds, 57,178,162
+bytes. Video and audio durations agree within 0.04 seconds. This supersedes the
+older Matt source limitation noted above (longer video with audio ending early).
+
+Full-file FFmpeg video/audio decode checks and all static/HTTP site checks pass.
+Source poster images were inspected for orientation and color. Browser playback
+was exercised on both local pages. No page layout, booking link or PDF changed.
