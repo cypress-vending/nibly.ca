@@ -160,3 +160,42 @@ resolution is lower than the source's optional 1080p stream. Playback smoke
 checks and media metadata inspection do not constitute a full narrated review
 of every second. No broad cross-browser matrix or third-party booking delivery
 verification was performed. No actionable P0/P1/P2 design findings remain.
+
+## Rep info-kit downloads - 2026-09-16
+
+Fresh downloads from `https://heron-pike-kejb.squarespace.com/{rep}` followed
+Squarespace's `/s/` redirects to `static1.squarespace.com`. The original PDF files
+were copied back into `s/`; all five are byte-identical to the existing repository
+and live production files, so there is no binary PDF diff. Each is a 19-page,
+unencrypted PDF 1.7. All 95 pages were rendered with Poppler and visually reviewed
+in contact sheets; no blank pages or render errors were found. The named calls
+to action on pages 1 and 18 match the page/filename for Pat, Graham, Jeff, Matt
+and Mackenzie. Travis's source page still has no PDF.
+
+Before the change, clicking Pat's live button in Chrome opened and displayed the
+PDF correctly. Codex's embedded browser showed an empty PDF surface. This
+reproduces one viewer-specific failure; it does not establish the cause on every
+reported device. The PDF files themselves were not corrupt or blank in these
+checks. No flattening, recompression or content changes were made.
+
+The five Get Info Kit buttons now use a native same-origin `download` attribute
+with the exact rep-specific filename and no `_blank` target. This requests a file
+download rather than relying on an embedded PDF viewer. Local Chrome clicks kept
+the landing page open. Automated download-event confirmation timed out; inspection
+of Chrome's internal downloads page was unavailable under browser tool policy,
+so successful save completion across browsers is not claimed.
+
+`tools/check_site.py` checks each rep-to-PDF mapping and the download behavior
+attributes. Its remote-script allowlist now recognizes the exact pre-existing
+HubSpot tracking embed; this repaired a check that already failed on the base
+branch. Static checks and local HTTP route checks pass for all 27 pages.
+
+Verified source SHA-256 hashes:
+
+| Rep | File under `s/` | SHA-256 |
+| --- | --- | --- |
+| Pat | Nibly-InfoPackPricing-8p5x11_Pat.pdf | 98f246367dd49e1050fa6ec14f24b3d5e3b46ea948036299d4284aaedefb9ab6 |
+| Graham | Nibly-InfoPackPricing-8p5x11_Graham.pdf | 9953ddae6cb0040c5286779e65994d08d66fb817331d48e2d49d5ae4fb849ed0 |
+| Jeff | Nibly-InfoPackPricing-8p5x11_Jeff.pdf | 02eb3e8d646d1c4650e5e9def2656f1bd851f2fb93e4da42aa4ca1ca52a3f9b6 |
+| Matt | Nibly-InfoPackPricing-8p5x11_Matt.pdf | c8dae82b9cffa5fb5417a964b46c377035b9c1d90074bdd8389da23ebad26801 |
+| Mackenzie | Nibly-InfoPackPricing-8p5x11_Mackenzie.pdf | 9958e75aef9db27c0d1c0c3d6c4de00610db0cb5c2aad326fafe6a2751939afa |
