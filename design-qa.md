@@ -219,3 +219,21 @@ older Matt source limitation noted above (longer video with audio ending early).
 Full-file FFmpeg video/audio decode checks and all static/HTTP site checks pass.
 Source poster images were inspected for orientation and color. Browser playback
 was exercised on both local pages. No page layout, booking link or PDF changed.
+
+## Original operations manual restored - 2026-09-16
+
+The `/ops-manual` page already linked to
+`/s/Nibly_OperationManual_8p5x11_v6sm.pdf`, but the hosted PDF was corrupt: its
+bytes exactly matched the original decoded as UTF-8 with replacement characters
+and then encoded as UTF-8 again. This increased the size from 1,948,971 to
+2,896,133 bytes and damaged binary streams and PDF offsets.
+
+Replaced it with the unmodified binary download from the original Squarespace
+`/s/` URL, which redirects to:
+https://static1.squarespace.com/static/6839fdb9cea1cf45362095f6/t/6a29c0df968db6708d4274f3/1781121252343/Nibly_OperationManual_8p5x11_v6sm.pdf
+
+All 54 source pages rendered without errors in Poppler and were reviewed in
+contact sheets. The filename and existing landing-page link are preserved.
+The site checker now verifies the SHA-256 of this exact original; update the
+fingerprint deliberately if a revised manual is supplied. No text conversion,
+recompression or content editing was performed.

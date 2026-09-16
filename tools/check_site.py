@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Dependency-free checks for the static site; optionally verify preview HTTP routes."""
 import argparse
+import hashlib
 import http.client
 import json
 import re
@@ -137,6 +138,9 @@ assert {n.attrs.get('name') for n in form.find('input') if 'required' in n.attrs
 for path in ROOT.glob('s/*.pdf'):
     assert path.read_bytes().startswith(b'%PDF'), path
 assert len(list(ROOT.glob('s/*.pdf'))) == 13
+# Byte-for-byte original downloaded from Squarespace on 2026-09-16.
+# Update this fingerprint only when intentionally replacing the manual.
+assert hashlib.sha256((ROOT / 's/Nibly_OperationManual_8p5x11_v6sm.pdf').read_bytes()).hexdigest() == 'f7b9f24487e87c7a61fbb0fec638f30820e8472a9fb827b88ecbb82f91b04d23', 'Operations manual differs from the verified original PDF'
 for rep in ('Pat', 'Graham', 'Jeff', 'Matt', 'Mackenzie'):
     filename = f'Nibly-InfoPackPricing-8p5x11_{rep}.pdf'
     links = [n for n in docs[f'{rep.lower()}.html'].find('a')
