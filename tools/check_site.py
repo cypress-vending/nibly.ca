@@ -76,10 +76,13 @@ for name, doc in docs.items():
             refs += [('src', value.strip().split()[0]) for value in n.attrs['srcset'].split(',')]
         for key, ref in refs:
             url = urlsplit(ref)
-            if url.scheme:
+            if url.scheme or url.netloc:
                 assert key != 'src' or (n.tag == 'script' and
                     ref == 'https://js.hsforms.net/forms/embed/22691627.js' and
-                    'defer' in n.attrs) or (name == 'travis.html' and n.tag == 'iframe' and ref == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected remote runtime asset', ref)
+                    'defer' in n.attrs) or (n.tag == 'script' and
+                    ref == '//js.hs-scripts.com/22691627.js' and
+                    n.attrs.get('id') == 'hs-script-loader' and
+                    'async' in n.attrs and 'defer' in n.attrs) or (name == 'travis.html' and n.tag == 'iframe' and ref == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected remote runtime asset', ref)
                 continue
             assert ref, (name, 'Empty reference')
             raw_path = unquote(url.path) if url.path else name
@@ -134,7 +137,18 @@ assert {n.attrs.get('name') for n in form.find('input') if 'required' in n.attrs
 for path in ROOT.glob('s/*.pdf'):
     assert path.read_bytes().startswith(b'%PDF'), path
 assert len(list(ROOT.glob('s/*.pdf'))) == 13
+for rep in ('Pat', 'Graham', 'Jeff', 'Matt', 'Mackenzie'):
+    filename = f'Nibly-InfoPackPricing-8p5x11_{rep}.pdf'
+    links = [n for n in docs[f'{rep.lower()}.html'].find('a')
+             if urlsplit(n.attrs.get('href', '')).path.endswith('.pdf')]
+    assert len(links) == 1, (rep, 'Expected one info kit')
+    assert links[0].attrs.get('href') == '/s/' + filename, (rep, 'Wrong rep PDF')
+    assert links[0].attrs.get('download') == filename, (rep, 'Info kit must download')
+    assert 'target' not in links[0].attrs, (rep, 'Download must not open an empty tab')
+assert not any(urlsplit(n.attrs.get('href', '')).path.endswith('.pdf')
+               for n in docs['travis.html'].find('a')), 'Travis has no source PDF'
 print(f'PASS: {len(PAGES)} pages, unique metadata, H1s, local assets/anchors, graph references, visible FAQ parity and sitemap.')
+print('PASS: five info-kit buttons download the PDF for the matching rep; Travis has no PDF.')
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--url', help='Local preview origin, e.g. http://127.0.0.1:4174')
