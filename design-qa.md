@@ -237,3 +237,27 @@ contact sheets. The filename and existing landing-page link are preserved.
 The site checker now verifies the SHA-256 of this exact original; update the
 fingerprint deliberately if a revised manual is supplied. No text conversion,
 recompression or content editing was performed.
+
+## Payment, Vendron, product and start-up PDFs restored - 2026-09-16
+
+Fresh original binaries replaced the damaged copies linked from
+`/streampay-installation` (2 pages), `/vendron-touchscreen` (5 pages),
+`/product-loading` (9 pages), and `/start-up-grid` (7 pages). Each damaged file
+exactly matched the source decoded as UTF-8 with replacement characters and
+then re-encoded. The restored `/ops-manual` (54 pages) still matched its original
+and needed no PDF replacement.
+
+All 23 additional original pages were rendered at 900px and visually inspected
+without blank pages, clipping or rendering errors. Each of the five landing-page
+links retains its original `/s/` path and now appends a content-hash version query
+to avoid cached corrupt copies. PDFs are unmodified binary downloads from the
+remaining Squarespace site; source URLs and SHA-256 fingerprints are recorded in
+`tools/resource-pdfs.json`.
+
+Run `python3 tools/check_resource_pdfs.py` for the exact page/file mappings and
+binary integrity, or add `--url https://nibly.ca` to verify the published page
+links, PDF MIME types and complete file hashes. Local file and preview HTTP checks
+pass for all five resources. The broader existing `tools/check_site.py` currently
+fails at its page inventory because a separate upstream change added
+`request-v1.html` without adding it to that check's known pages; this unrelated
+baseline failure is not reported as a pass or altered in this resource repair.
