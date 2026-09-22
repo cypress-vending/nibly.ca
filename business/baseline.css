@@ -5,3 +5,6 @@
 #form-188-form-success-message.preview-result{display:block!important;background:#f5f6f2;color:#24334f;font:16px/1.6 Poppins,sans-serif;padding:20px;margin-top:20px;border:1px solid #5b6d92}
 
 .preview-form-notice{font:14px/1.6 Poppins,sans-serif;color:#24334f;background:#f5f6f2;padding:16px;margin:0 0 20px;width:100%}button:disabled{cursor:not-allowed;opacity:.65}
+
+/* White backing for the brand logos, including their existing white image backgrounds. */
+#customizableSection-52 .css-1u7z0ht{background-color:#fff}
