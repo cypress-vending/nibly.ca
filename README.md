@@ -156,3 +156,7 @@ Mackenzie's is 4:15; each has audio covering the full clip.
 `rep-pages.css` scopes these layouts. No additional player library, Squarespace
 runtime or ecommerce component is included. Native control appearance varies
 by browser; Jeff's square frame retains portrait letterboxing.
+
+## Business campaign baseline
+
+`/business/` is a source-faithful baseline of the existing Nibly business campaign page. It is published for HubSpot integration review with a visible notice, disabled submission and inactive ad measurement. See `business/README.md`. It remains noindex and is intentionally excluded from navigation, sitemap and llms.txt until ready for paid traffic. The earlier site enquiry forms are unchanged.
