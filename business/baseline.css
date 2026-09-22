@@ -1,0 +1,7 @@
+/* Source layout is retained in index.html. These rules affect preview status only. */
+[hidden]{display:none!important}
+.preview-bar{padding:14px 20px;background:#f5f6f2;color:#24334f;text-align:center;font:13px/1.5 Poppins,sans-serif;border-top:1px solid #ddd}
+.preview-bar a{color:inherit;text-decoration:underline}
+#form-188-form-success-message.preview-result{display:block!important;background:#f5f6f2;color:#24334f;font:16px/1.6 Poppins,sans-serif;padding:20px;margin-top:20px;border:1px solid #5b6d92}
+
+.preview-form-notice{font:14px/1.6 Poppins,sans-serif;color:#24334f;background:#f5f6f2;padding:16px;margin:0 0 20px;width:100%}button:disabled{cursor:not-allowed;opacity:.65}
