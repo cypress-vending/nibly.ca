@@ -68,6 +68,17 @@ if (location.hostname === GITHUB_PAGES_HOST) {
   });
 }
 
+document.addEventListener("click", (event) => {
+  const anchor = event.target.closest('a[href^="#"]');
+  if (!anchor) return;
+  const hash = anchor.getAttribute("href");
+  if (hash.length <= 1) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  event.preventDefault();
+  target.scrollIntoView({ behavior: "smooth" });
+});
+
 // pass url parameters around the website.  especially useful for utm parameters.
 const querystring = location.search.substring(1);
 if (querystring) {
