@@ -2,8 +2,8 @@
 export const siteConfig = Object.freeze({
   previewMode: true,
   adsTrackingEnabled: false,
-  openaiPixelId: '',
-  allowedOrigins: [],
+  openaiPixelId: 'BngSvGS4SNTF4a2utoBtxg',
+  allowedOrigins: ['https://nibly.ca'],
   variant: 'baseline',
 });
 
