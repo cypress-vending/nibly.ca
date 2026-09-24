@@ -1,10 +1,10 @@
 // Browser-only adapter. Public pixel ID only; never insert an Ads API key here.
-// Inert until enabled + HTTPS allowlisted origin + explicit measurement consent.
+// Inert until enabled on an allowlisted HTTPS origin. Uses the SDK consent default.
 export function createNiblyTracking({ enabled = false, pixelId = '', allowedOrigins = [], windowRef = globalThis.window } = {}) {
   const w = windowRef;
   const location = w?.location;
   const eligible = enabled === true && Boolean(pixelId) && !pixelId.includes('YOUR') && location?.protocol === 'https:' && allowedOrigins.includes(location.origin) && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-  let consent = false;
+  let consent = eligible;
   let initialized = false;
   const sent = new Set();
   const fields = ['oppref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -39,11 +39,12 @@ export function createNiblyTracking({ enabled = false, pixelId = '', allowedOrig
       script.src = 'https://bzrcdn.openai.com/sdk/oaiq.min.js';
       w.document.head.appendChild(script);
     }
-    w.oaiq('consent', false);
     w.oaiq('init', { pixelId });
     initialized = true;
   }
+  if (eligible) { initialize(); attribution(); }
   return {
+    // Optional integration for an existing consent manager; not required to initialize.
     setConsent(granted) {
       consent = eligible && granted === true;
       if (consent) {
