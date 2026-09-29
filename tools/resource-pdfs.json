@@ -1,11 +1,5 @@
 [
   {
-    "page": "/ops-manual",
-    "file": "s/Nibly_OperationManual_8p5x11_v6sm.pdf",
-    "sha256": "f7b9f24487e87c7a61fbb0fec638f30820e8472a9fb827b88ecbb82f91b04d23",
-    "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_OperationManual_8p5x11_v6sm.pdf"
-  },
-  {
     "page": "/streampay-installation",
     "file": "s/Nibly_StreamPay_8p5x11.pdf",
     "sha256": "2404ff84818efbf16feafb414afeed1e06da3e86642fb6946c031cc5fa667d48",
