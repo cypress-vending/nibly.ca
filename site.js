@@ -38,6 +38,7 @@ const CLEAN_URL_FILES = {
   "/contact-us": "contact-us.html",
   "/privacy-policy": "privacy-policy.html",
   "/about": "about.html",
+  "/ai-vending": "ai-vending.html",
 };
 const PRODUCTION_HOSTS = ["nibly.ca", "www.nibly.ca"];
 const GITHUB_PAGES_HOST = "cypress-vending.github.io";

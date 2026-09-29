@@ -17,6 +17,7 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Locations](locations.html): Workplace hosting, stocked machine placement, restocking and how to enquire about availability at a particular location.
 - [Contact Us](contact-us.html): Cypress Vending Corp. attribution, office address, email and telephone details for machine, hosting and support enquiries.
 - [About](about.html): Who Nibly is, the company behind it (Cypress Vending Corp), what Nibly offers people starting a vending business, and how to reach the team.
+- [What Is AI Vending?](ai-vending.html): How AI vending differs from traditional and smart vending, what to compare when evaluating an AI vending business, and the published features of the Nibly machine.
 
 ## Optional
 
