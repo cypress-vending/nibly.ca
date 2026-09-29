@@ -103,5 +103,10 @@
     "path": "/travis",
     "file": "travis.html",
     "title": "Travis Nibly Demo"
+  },
+  {
+    "path": "/about",
+    "file": "about.html",
+    "title": "About Nibly"
   }
 ]

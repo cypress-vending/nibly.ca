@@ -83,3 +83,6 @@
 /travis.html /travis 301
 /travis/ /travis 301
 /travis /travis.html 200
+/about.html /about 301
+/about/ /about 301
+/about /about.html 200
