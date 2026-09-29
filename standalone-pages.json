@@ -50,11 +50,6 @@
     "title": "Start Up Grid"
   },
   {
-    "path": "/ops-manual",
-    "file": "ops-manual.html",
-    "title": "Operations Manual"
-  },
-  {
     "path": "/quick-start-guide",
     "file": "quick-start-guide.html",
     "title": "Quick Start Guide"

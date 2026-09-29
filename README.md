@@ -1,10 +1,10 @@
 # Nibly static website
 
-Twenty-seven pages built with plain HTML, CSS and small JavaScript files. The original
+Twenty-six pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-22 standalone support, service, MADD, ebook and sales representative pages. `standalone-pages.json`
+21 standalone support, service, MADD, ebook and sales representative pages. `standalone-pages.json`
 lists each additional page and its original URL. Images and fonts are local in
-`assets/`; 13 original PDF manuals and info kits retain their exact filenames under `s/`.
+`assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.
 
 ## Preview locally
@@ -77,7 +77,7 @@ This repository currently publishes its `main` branch through GitHub Pages.
 The static site is published at https://cypress-vending.github.io/nibly.ca/ for
 team review. The Squarespace site and domain DNS remain unchanged.
 
-The canonical URLs, sitemap and production robots.txt target https://www.nibly.ca/.
+The canonical URLs, sitemap and robots.txt target https://nibly.ca/ (the live GitHub Pages custom domain; www.nibly.ca redirects to it).
 They are prepared for an approved future production launch. `routes.txt` is a
 host-neutral mapping used by the local preview, not an automatically applied
 GitHub Pages or other provider configuration.
@@ -103,7 +103,7 @@ Pages project path changes.
 Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
-- Verify all paths in `standalone-pages.json` and the 13 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
+- Verify all paths in `standalone-pages.json` and the 12 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
 - Connect the service request form and decide whether to re-enable donations or ebook sales in a separate change.
 - Confirm the company, package, hosting and support copy with the Nibly team.
 - All enquiry forms now deliver to HubSpot; confirm form routing/notifications

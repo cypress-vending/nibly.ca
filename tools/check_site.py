@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-DOMAIN = 'https://www.nibly.ca'
+DOMAIN = 'https://nibly.ca'
 PAGES = {'index.html': '/', 'the-machine.html': '/the-machine',
          'locations.html': '/locations', 'contact-us.html': '/contact-us',
          'privacy-policy.html': '/privacy-policy'}
@@ -140,7 +140,6 @@ for path in ROOT.glob('s/*.pdf'):
 assert len(list(ROOT.glob('s/*.pdf'))) == 13
 # Byte-for-byte original downloaded from Squarespace on 2026-09-16.
 # Update this fingerprint only when intentionally replacing the manual.
-assert hashlib.sha256((ROOT / 's/Nibly_OperationManual_8p5x11_v6sm.pdf').read_bytes()).hexdigest() == 'f7b9f24487e87c7a61fbb0fec638f30820e8472a9fb827b88ecbb82f91b04d23', 'Operations manual differs from the verified original PDF'
 for rep in ('Pat', 'Graham', 'Jeff', 'Matt', 'Mackenzie'):
     filename = f'Nibly-InfoPackPricing-8p5x11_{rep}.pdf'
     links = [n for n in docs[f'{rep.lower()}.html'].find('a')

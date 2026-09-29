@@ -48,9 +48,6 @@
 /start-up-grid.html /start-up-grid 301
 /start-up-grid/ /start-up-grid 301
 /start-up-grid /start-up-grid.html 200
-/ops-manual.html /ops-manual 301
-/ops-manual/ /ops-manual 301
-/ops-manual /ops-manual.html 200
 /quick-start-guide.html /quick-start-guide 301
 /quick-start-guide/ /quick-start-guide 301
 /quick-start-guide /quick-start-guide.html 200
