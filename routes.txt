@@ -86,3 +86,6 @@
 /about.html /about 301
 /about/ /about 301
 /about /about.html 200
+/ai-vending.html /ai-vending 301
+/ai-vending/ /ai-vending 301
+/ai-vending /ai-vending.html 200

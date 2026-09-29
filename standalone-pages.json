@@ -108,5 +108,10 @@
     "path": "/about",
     "file": "about.html",
     "title": "About Nibly"
+  },
+  {
+    "path": "/ai-vending",
+    "file": "ai-vending.html",
+    "title": "What Is AI Vending?"
   }
 ]
