@@ -40,6 +40,7 @@ const CLEAN_URL_FILES = {
   "/about": "about.html",
   "/ai-vending": "ai-vending.html",
   "/how-to-choose-an-ai-vending-business": "how-to-choose-an-ai-vending-business.html",
+  "/resources": "resources.html",
 };
 const PRODUCTION_HOSTS = ["nibly.ca", "www.nibly.ca"];
 const GITHUB_PAGES_HOST = "cypress-vending.github.io";

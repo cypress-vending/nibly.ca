@@ -651,7 +651,8 @@ button:focus-visible {
 }
 @media (max-width: 767px) {
   .reading-inner { padding: 44px 0; }
-  .buyers-guide .reading-inner h1 { font-size: 12vw; }
+  .buyers-guide .reading-inner h1,
+  .resources .reading-inner h1 { font-size: 12vw; }
   .reading-columns { grid-template-columns: 1fr; gap: 8px; }
   .specifications th, .specifications td { padding: 14px 6px; overflow-wrap: anywhere; }
   .specifications th { width: 38%; }
