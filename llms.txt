@@ -38,10 +38,6 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Product Loading](product-loading.html): Links to the original downloadable PDF manual.
 - [Start Up Grid](start-up-grid.html): Links to the original downloadable PDF manual.
 - [Quick Start Guide](quick-start-guide.html): Links to the original downloadable PDF manual.
-- [Starting and Funding a Business in Canada](starting-and-funding-a-business-in-canada.html): Ebook information; online purchasing is unavailable.
-- [Store](store/index.html): Ebook information; online purchasing is unavailable.
-- [E-Book](store/e-book.html): Ebook information; online purchasing is unavailable.
-- [E-Book | Starting & Funding a Business in Canada](store/p/e-book-starting-funding-a-business-in-canada.html): Ebook information; online purchasing is unavailable.
 
 ## Sales representative demos
 

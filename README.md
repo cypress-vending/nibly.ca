@@ -1,8 +1,8 @@
 # Nibly static website
 
-Thirty pages built with plain HTML, CSS and small JavaScript files. The original
+Twenty-six pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-25 standalone support, service, MADD, ebook and sales representative pages. `standalone-pages.json`
+21 standalone support, service, MADD, guide and sales representative pages. `standalone-pages.json`
 lists each additional page and its original URL. Images and fonts are local in
 `assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.
@@ -33,7 +33,7 @@ form. Email and telephone links use the published Nibly contact details.
 
 Edit the HTML files directly. Shared styling is in `styles.css`; additions are
 scoped to `standalone.css`. `site.js` handles the mobile menu and host-aware URLs;
-`standalone.js` handles the ebook gallery and the disconnected service form.
+`standalone.js` handles the disconnected service form.
 Keep `standalone-pages.json`, `routes.txt`, `sitemap.xml` and `llms.txt` synchronized
 when adding or removing a page.
 
@@ -56,9 +56,8 @@ on the four original pages are unchanged.
 ### Standalone functionality
 
 The MADD page retains its original content and layout but has no PayPal buttons
-or scripts. The ebook catalogue links to its detail page and its three-image
-gallery works; its purchase button is inactive with an explanation. No online
-purchase is available. `/streampay-portal` and `/vendron-setup` intentionally retain
+or scripts. The site has no store or ebook pages, and no online purchase is
+available. `/streampay-portal` and `/vendron-setup` intentionally retain
 the source site's unfinished “Title” placeholder content.
 
 Metadata and JSON-LD are inline in the HTML. Keep structured data consistent with
@@ -104,7 +103,7 @@ Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
 - Verify all paths in `standalone-pages.json` and the 12 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
-- Connect the service request form and decide whether to re-enable donations or ebook sales in a separate change.
+- Connect the service request form and decide whether to re-enable donations in a separate change.
 - Confirm the company, package, hosting and support copy with the Nibly team.
 - All enquiry forms now deliver to HubSpot; confirm form routing/notifications
   are configured in the HubSpot portal and review the inherited privacy policy
@@ -131,10 +130,6 @@ production domain. It is an optional content guide, not an access-control file
 or a guarantee of search inclusion or citations. It follows the
 [llms.txt proposal](https://llmstxt.org/). Keep it synchronized with the visible
 pages.
-
-The catalogue uses `store/index.html` so `/store/` works on GitHub Pages alongside
-its nested pages. GitHub Pages may normalize `/store` to `/store/`; the original
-path remains reachable. Production can serve `/store` directly using `routes.txt`.
 
 ## Sales representative pages
 

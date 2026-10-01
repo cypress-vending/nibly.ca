@@ -51,18 +51,6 @@
 /quick-start-guide.html /quick-start-guide 301
 /quick-start-guide/ /quick-start-guide 301
 /quick-start-guide /quick-start-guide.html 200
-/starting-and-funding-a-business-in-canada.html /starting-and-funding-a-business-in-canada 301
-/starting-and-funding-a-business-in-canada/ /starting-and-funding-a-business-in-canada 301
-/starting-and-funding-a-business-in-canada /starting-and-funding-a-business-in-canada.html 200
-/store.html /store 301
-/store/ /store 301
-/store /store/index.html 200
-/store/e-book.html /store/e-book 301
-/store/e-book/ /store/e-book 301
-/store/e-book /store/e-book.html 200
-/store/p/e-book-starting-funding-a-business-in-canada.html /store/p/e-book-starting-funding-a-business-in-canada 301
-/store/p/e-book-starting-funding-a-business-in-canada/ /store/p/e-book-starting-funding-a-business-in-canada 301
-/store/p/e-book-starting-funding-a-business-in-canada /store/p/e-book-starting-funding-a-business-in-canada.html 200
 
 # Sales representative demo pages
 /pat.html /pat 301
