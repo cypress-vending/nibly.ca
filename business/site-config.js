@@ -1,10 +1,11 @@
 // Public deployment configuration. NEVER put an API key in this file.
 export const siteConfig = Object.freeze({
-  previewMode: true,
-  adsTrackingEnabled: false,
+  previewMode: false,
+  adsTrackingEnabled: true,
   openaiPixelId: 'BngSvGS4SNTF4a2utoBtxg',
   allowedOrigins: ['https://nibly.ca'],
   variant: 'baseline',
+  hubspotFormId: 'cfb46a58-42db-4eb5-9d46-53fc060f8252',
 });
 
 document.addEventListener('click', (event) => {

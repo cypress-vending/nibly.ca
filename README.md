@@ -159,4 +159,4 @@ by browser; Jeff's square frame retains portrait letterboxing.
 
 ## Business campaign baseline
 
-`/business/` is a source-faithful baseline of the existing Nibly business campaign page. It is published for HubSpot integration review with a visible notice, disabled submission and inactive ad measurement. See `business/README.md`. It remains noindex and is intentionally excluded from navigation, sitemap and llms.txt until ready for paid traffic. The earlier site enquiry forms are unchanged.
+`/business/` is a source-faithful baseline of the existing Nibly business campaign page. It uses a live HubSpot embed and measures confirmed submissions with the OpenAI pixel on the production origin. See `business/README.md`. It remains noindex and is intentionally excluded from navigation, sitemap and llms.txt as a paid campaign destination. The earlier site enquiry forms are unchanged.
