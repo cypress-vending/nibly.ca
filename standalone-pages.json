@@ -113,5 +113,10 @@
     "path": "/ai-vending",
     "file": "ai-vending.html",
     "title": "What Is AI Vending?"
+  },
+  {
+    "path": "/how-to-choose-an-ai-vending-business",
+    "file": "how-to-choose-an-ai-vending-business.html",
+    "title": "How to Choose an AI Vending Machine Business"
   }
 ]
