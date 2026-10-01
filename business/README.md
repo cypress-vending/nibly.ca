@@ -1,11 +1,9 @@
-# Business landing-page baseline
+# Business campaign landing page
 
-Source-faithful page at `/business/`. It is intentionally noindex and inactive while HubSpot is connected. It does not load legacy Unbounce/advertising scripts or send preview submissions.
+`/business/` uses the HubSpot updated form embed (portal `22691627`, form `cfb46a58-42db-4eb5-9d46-53fc060f8252`). It remains noindex for paid traffic. The public site configuration enables the OpenAI pixel only on `https://nibly.ca`; localhost and preview origins cannot send conversions. Never put an API key in these public files.
 
-The public files are plain HTML/CSS/JavaScript with locally hosted images and fonts. No build step is needed.
+`baseline.js` initializes tracking and connects the documented `hs-form-event:on-submission:success` event. Only this form's successful submissions emit `lead_created`, using HubSpot's conversion ID for duplicate protection. Failed submissions, clicks and page loads do not emit leads. No contact field values are passed by this adapter. HubSpot owns submission, validation and confirmation independently of pixel availability.
 
-To enable leads, implement an approved HubSpot provider and register it using `window.NiblyFormIntegration.registerProvider(async ({fields,hiddenFields,eventId}) => ...)`. Return `{accepted:true}` only after provider acknowledgement. No affirmative consent action is required by the adapter; the optional `.setMeasurementConsent(boolean)` hook remains available for existing preferences. Then update `site-config.js`: previewMode false, public Pixel ID, exact HTTPS origin, and adsTrackingEnabled true when measurement is ready. Never put secret API keys in website files.
+The obsolete native-form `registerProvider` integration is no longer used. Do not restore it for this embed. The account must retain the Nibly info-kit event setting linked to the campaign and this pixel.
 
-The provider registration enables the submit button only outside preview mode. Remove the preview notice/footer and preview title after integration passes end-to-end testing. Current field names are email, phone, firstname, lastname and Investment Requirement. The acknowledgement is optional, matching the source. Hidden attribution and event-ID values are supplied to the provider interface.
-
-OpenAI conversion reporting requires a web pixel and standard lead_created setting in the advertiser account; the verified Nibly Pixel ID is configured. Successful browser queuing does not prove event receipt. Verify a successful provider submission reaches HubSpot and Ads Manager before directing paid traffic here.
+Checks: `python3 tools/check_business.py` and `node --test tools/*tracking.test.mjs tools/hubspot-conversions.test.mjs`. Test success, failure, unrelated forms and duplicate callbacks without transmitting synthetic leads to production. Browser queuing does not prove receipt or attribution; verify a genuine successful submission in HubSpot and the OpenAI recent events stream for end-to-end proof.
