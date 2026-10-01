@@ -89,3 +89,6 @@
 /ai-vending.html /ai-vending 301
 /ai-vending/ /ai-vending 301
 /ai-vending /ai-vending.html 200
+/how-to-choose-an-ai-vending-business.html /how-to-choose-an-ai-vending-business 301
+/how-to-choose-an-ai-vending-business/ /how-to-choose-an-ai-vending-business 301
+/how-to-choose-an-ai-vending-business /how-to-choose-an-ai-vending-business.html 200
