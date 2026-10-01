@@ -19,6 +19,7 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [About](about.html): Who Nibly is, the company behind it (Cypress Vending Corp), what Nibly offers people starting a vending business, and how to reach the team.
 - [What Is AI Vending?](ai-vending.html): How AI vending differs from traditional and smart vending, what to compare when evaluating an AI vending business, and the published features of the Nibly machine.
 - [How to Choose an AI Vending Machine Business](how-to-choose-an-ai-vending-business.html): Criteria for comparing AI vending businesses (location help, machine technology, management, support and contract clarity) and where Nibly fits. No rankings.
+- [Resources](resources.html): Index of Nibly's guides for people researching an AI vending machine business.
 
 ## Optional
 

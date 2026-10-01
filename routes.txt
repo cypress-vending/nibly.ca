@@ -92,3 +92,6 @@
 /how-to-choose-an-ai-vending-business.html /how-to-choose-an-ai-vending-business 301
 /how-to-choose-an-ai-vending-business/ /how-to-choose-an-ai-vending-business 301
 /how-to-choose-an-ai-vending-business /how-to-choose-an-ai-vending-business.html 200
+/resources.html /resources 301
+/resources/ /resources 301
+/resources /resources.html 200
