@@ -27,10 +27,6 @@ const CLEAN_URL_FILES = {
   "/product-loading": "product-loading.html",
   "/start-up-grid": "start-up-grid.html",
   "/quick-start-guide": "quick-start-guide.html",
-  "/starting-and-funding-a-business-in-canada": "starting-and-funding-a-business-in-canada.html",
-  "/store": "store/index.html",
-  "/store/e-book": "store/e-book.html",
-  "/store/p/e-book-starting-funding-a-business-in-canada": "store/p/e-book-starting-funding-a-business-in-canada.html",
 
   "/": "index.html",
   "/the-machine": "the-machine.html",
