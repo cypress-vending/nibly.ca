@@ -20,6 +20,8 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [What Is AI Vending?](ai-vending.html): How AI vending differs from traditional and smart vending, what to compare when evaluating an AI vending business, and the published features of the Nibly machine.
 - [How to Choose an AI Vending Machine Business](how-to-choose-an-ai-vending-business.html): Criteria for comparing AI vending businesses (location help, machine technology, management, support and contract clarity) and where Nibly fits. No rankings.
 - [Resources](resources.html): Index of Nibly's guides for people researching an AI vending machine business.
+- [Start a Nibly Vending Business](start-a-vending-business.html): Who a Nibly vending business is for, what you get, how location help works and the questions to ask before you start.
+- [Questions to Ask Before Buying a Vending Machine Business](questions-to-ask-before-buying-a-vending-business.html): The questions a careful buyer should ask any vending opportunity, with Nibly's own answers.
 
 ## Optional
 
