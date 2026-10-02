@@ -103,5 +103,15 @@
     "path": "/resources",
     "file": "resources.html",
     "title": "Resources"
+  },
+  {
+    "path": "/start-a-vending-business",
+    "file": "start-a-vending-business.html",
+    "title": "Start a Nibly Vending Business"
+  },
+  {
+    "path": "/questions-to-ask-before-buying-a-vending-business",
+    "file": "questions-to-ask-before-buying-a-vending-business.html",
+    "title": "Questions to Ask Before Buying a Vending Machine Business"
   }
 ]

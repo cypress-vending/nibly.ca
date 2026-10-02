@@ -83,3 +83,9 @@
 /resources.html /resources 301
 /resources/ /resources 301
 /resources /resources.html 200
+/start-a-vending-business.html /start-a-vending-business 301
+/start-a-vending-business/ /start-a-vending-business 301
+/start-a-vending-business /start-a-vending-business.html 200
+/questions-to-ask-before-buying-a-vending-business.html /questions-to-ask-before-buying-a-vending-business 301
+/questions-to-ask-before-buying-a-vending-business/ /questions-to-ask-before-buying-a-vending-business 301
+/questions-to-ask-before-buying-a-vending-business /questions-to-ask-before-buying-a-vending-business.html 200

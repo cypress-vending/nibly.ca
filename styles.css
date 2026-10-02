@@ -646,14 +646,18 @@ button:focus-visible {
 .reading-section.blue .faq summary { color: var(--cream); }
 #buyer-questions .faq summary,
 #buying-a-machine .faq summary,
-.buyers-guide .faq summary { font-family: poppins, sans-serif; font-weight: 400; line-height: 1.5; }
+.buyers-guide .faq summary,
+.start-business .faq summary,
+.buyer-questions-page .faq summary { font-family: poppins, sans-serif; font-weight: 400; line-height: 1.5; }
 @media (min-width: 768px) {
   #about-nibly .reading-columns { column-gap: 96px; }
 }
 @media (max-width: 767px) {
   .reading-inner { padding: 44px 0; }
   .buyers-guide .reading-inner h1,
-  .resources .reading-inner h1 { font-size: 12vw; }
+  .resources .reading-inner h1,
+  .start-business .reading-inner h1,
+  .buyer-questions-page .reading-inner h1 { font-size: 12vw; }
   .reading-columns { grid-template-columns: 1fr; gap: 8px; }
   .specifications th, .specifications td { padding: 14px 6px; overflow-wrap: anywhere; }
   .specifications th { width: 38%; }
