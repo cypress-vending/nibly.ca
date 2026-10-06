@@ -5,7 +5,7 @@ export const siteConfig = Object.freeze({
   openaiPixelId: 'BngSvGS4SNTF4a2utoBtxg',
   allowedOrigins: ['https://nibly.ca'],
   variant: 'baseline',
-  hubspotFormId: 'cfb46a58-42db-4eb5-9d46-53fc060f8252',
+  hubspotFormId: '915079cb-bc34-4b07-9079-26e9c3e19248',
 });
 
 document.addEventListener('click', (event) => {
