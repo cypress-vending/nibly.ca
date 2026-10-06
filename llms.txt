@@ -49,3 +49,4 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Matt Nibly demo](matt.html): Demo video, meeting booking and PDF info kit.
 - [Mackenzie Nibly demo](mackenzie.html): Demo video, meeting booking and PDF info kit.
 - [Travis Nibly demo](travis.html): Original unfinished demo page; booking/contact links are not configured.
+- [Start a Vending Machine Business in Greater Vancouver](vending-business-vancouver.html): Who a Greater Vancouver vending machine business suits, the machine, how location help works and what you and Nibly each handle.

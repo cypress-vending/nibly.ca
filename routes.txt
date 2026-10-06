@@ -89,3 +89,6 @@
 /questions-to-ask-before-buying-a-vending-business.html /questions-to-ask-before-buying-a-vending-business 301
 /questions-to-ask-before-buying-a-vending-business/ /questions-to-ask-before-buying-a-vending-business 301
 /questions-to-ask-before-buying-a-vending-business /questions-to-ask-before-buying-a-vending-business.html 200
+/vending-business-vancouver.html /vending-business-vancouver 301
+/vending-business-vancouver/ /vending-business-vancouver 301
+/vending-business-vancouver /vending-business-vancouver.html 200
