@@ -1,8 +1,8 @@
 # Nibly static website
 
-Twenty-eight pages built with plain HTML, CSS and small JavaScript files. The original
+Twenty-nine pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-23 standalone support, service, MADD, guide and sales representative pages. `standalone-pages.json`
+24 standalone support, service, MADD, guide and sales representative pages. `standalone-pages.json`
 lists each additional page and its original URL. Images and fonts are local in
 `assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.

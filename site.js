@@ -39,6 +39,7 @@ const CLEAN_URL_FILES = {
   "/resources": "resources.html",
   "/start-a-vending-business": "start-a-vending-business.html",
   "/questions-to-ask-before-buying-a-vending-business": "questions-to-ask-before-buying-a-vending-business.html",
+  "/vending-business-vancouver": "vending-business-vancouver.html",
 };
 const PRODUCTION_HOSTS = ["nibly.ca", "www.nibly.ca"];
 const GITHUB_PAGES_HOST = "cypress-vending.github.io";
