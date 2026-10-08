@@ -32,3 +32,7 @@
 .standalone h2 a{text-underline-offset:.2em}
 .service-request-form legend{margin-bottom:0}
 .standalone .footer .socials img{transform:scale(1.5)}
+
+.madd .madd-donation{max-width:680px;margin:0 auto;padding:48px 24px;text-align:center;display:block}
+.madd-donation #paypal-button-container-P-50R5927021406603JNELCSRY{max-width:400px;margin:24px auto;min-height:55px}
+.madd-donation #madd-payment-status:empty{display:none}
