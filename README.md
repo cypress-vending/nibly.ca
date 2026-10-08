@@ -5,7 +5,7 @@ Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
 24 standalone support, service, MADD, guide and sales representative pages. `standalone-pages.json`
 lists each additional page and its original URL. Images and fonts are local in
 `assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
-There is no build step, shopping cart, checkout, PayPal SDK or Squarespace runtime.
+There is no build step, shopping cart or Squarespace runtime. The MADD page loads the PayPal subscription SDK.
 
 ## Preview locally
 
@@ -55,9 +55,10 @@ on the four original pages are unchanged.
 
 ### Standalone functionality
 
-The MADD page retains its original content and layout but has no PayPal buttons
-or scripts. The site has no store or ebook pages, and no online purchase is
-available. `/streampay-portal` and `/vendron-setup` intentionally retain
+The MADD page includes a PayPal subscription button for the supplied plan
+`P-50R5927021406603JNELCSRY`, with quantity 1 for one participating machine.
+PayPal handles subscription approval; the page displays confirmation, cancellation
+and loading/error messages. The site has no store or ebook pages. `/streampay-portal` and `/vendron-setup` intentionally retain
 the source site's unfinished “Title” placeholder content.
 
 Metadata and JSON-LD are inline in the HTML. Keep structured data consistent with

@@ -78,7 +78,9 @@ for name, doc in docs.items():
         for key, ref in refs:
             url = urlsplit(ref)
             if url.scheme or url.netloc:
-                assert key != 'src' or (n.tag == 'script' and
+                assert key != 'src' or (name == 'madd.html' and n.tag == 'script' and
+                    ref == 'https://www.paypal.com/sdk/js?client-id=AfXrXyNJPulSnb7GRRX8jWrO6O5zKEplRF1SeIsIG-yoG9ls1SUaRoqDQyVwpKH-D4iYNfVzBoF806dz&vault=true&intent=subscription' and
+                    n.attrs.get('data-sdk-integration-source') == 'button-factory') or (n.tag == 'script' and
                     ref == 'https://js.hsforms.net/forms/embed/22691627.js' and
                     'defer' in n.attrs) or (n.tag == 'script' and
                     ref == '//js.hs-scripts.com/22691627.js' and
