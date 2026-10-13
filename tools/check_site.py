@@ -67,7 +67,10 @@ for name, doc in docs.items():
     canonical = [n.attrs['href'] for n in doc.find('link') if n.attrs.get('rel') == 'canonical']
     assert len(desc) == len(canonical) == 1, name
     assert canonical[0] == DOMAIN + PAGES[name], name
-    titles.add(title); descriptions.add(desc[0]); canonical_urls.add(canonical[0])
+    noindex = any(n.attrs.get('name') == 'robots' and 'noindex' in n.attrs.get('content', '') for n in doc.find('meta'))
+    titles.add(title); descriptions.add(desc[0])
+    if not noindex:
+        canonical_urls.add(canonical[0])  # noindex review previews stay out of the sitemap
     ids = [n.attrs['id'] for n in doc.find() if 'id' in n.attrs]
     assert len(ids) == len(set(ids)), (name, 'Duplicate id')
     for n in doc.find():

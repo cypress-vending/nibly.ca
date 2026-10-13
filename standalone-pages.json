@@ -118,5 +118,20 @@
     "path": "/vending-business-vancouver",
     "file": "vending-business-vancouver.html",
     "title": "Start a Vending Machine Business in Greater Vancouver"
+  },
+  {
+    "path": "/preview-home",
+    "file": "preview-home.html",
+    "title": "Preview: Home"
+  },
+  {
+    "path": "/preview-the-machine",
+    "file": "preview-the-machine.html",
+    "title": "Preview: The Machine"
+  },
+  {
+    "path": "/preview-locations",
+    "file": "preview-locations.html",
+    "title": "Preview: Locations"
   }
 ]
