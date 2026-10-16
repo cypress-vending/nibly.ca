@@ -92,6 +92,9 @@
 /vending-business-vancouver.html /vending-business-vancouver 301
 /vending-business-vancouver/ /vending-business-vancouver 301
 /vending-business-vancouver /vending-business-vancouver.html 200
+/vending-business-with-location-help.html /vending-business-with-location-help 301
+/vending-business-with-location-help/ /vending-business-with-location-help 301
+/vending-business-with-location-help /vending-business-with-location-help.html 200
 
 # Client review previews (noindex, not in the sitemap)
 /preview-home.html /preview-home 301
