@@ -133,5 +133,10 @@
     "path": "/preview-locations",
     "file": "preview-locations.html",
     "title": "Preview: Locations"
+  },
+  {
+    "path": "/vending-business-with-location-help",
+    "file": "vending-business-with-location-help.html",
+    "title": "A Vending Business With the Location Included"
   }
 ]
