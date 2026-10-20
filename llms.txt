@@ -39,6 +39,7 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Vendron Setup](vendron-setup.html): Placeholder page retained from the original site; no manual content is available here yet.
 - [Product Loading](product-loading.html): Links to the original downloadable PDF manual.
 - [Start Up Grid](start-up-grid.html): Links to the original downloadable PDF manual.
+- [Operations Manual](ops-manual.html): Links to the original downloadable operations manual PDF.
 - [Quick Start Guide](quick-start-guide.html): Links to the original downloadable PDF manual.
 
 ## Sales representative demos
