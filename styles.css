@@ -664,3 +664,9 @@ button:focus-visible {
   .specifications th, .specifications td { padding: 14px 6px; overflow-wrap: anywhere; }
   .specifications th { width: 38%; }
 }
+
+/* Owner testimonials */
+.testimonial { margin: 32px 0; padding: 4px 0 4px 24px; border-left: 4px solid var(--lime); max-width: 72ch; }
+.testimonial blockquote { margin: 0; }
+.testimonial blockquote p { margin: 0; font-style: italic; }
+.testimonial figcaption { margin-top: 12px; font-weight: 600; color: var(--lime); }

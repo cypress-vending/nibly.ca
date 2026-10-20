@@ -51,3 +51,4 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Travis Nibly demo](travis.html): Original unfinished demo page; booking/contact links are not configured.
 - [Start a Vending Machine Business in Greater Vancouver](vending-business-vancouver.html): Who a Greater Vancouver vending machine business suits, the machine, how location help works and what you and Nibly each handle.
 - [A Vending Business With the Location Included](vending-business-with-location-help.html): For buyers who want a vending business with the location handled: what Nibly and the owner each handle, restocking, the steps to an installed machine and the packages by name.
+- [What Nibly Owners Say](testimonials.html): Testimonials from people who bought vending machines from Cypress Vending Corp, the team behind Nibly, on starting their business, locations and support.

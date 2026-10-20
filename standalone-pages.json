@@ -138,5 +138,10 @@
     "path": "/vending-business-with-location-help",
     "file": "vending-business-with-location-help.html",
     "title": "A Vending Business With the Location Included"
+  },
+  {
+    "path": "/testimonials",
+    "file": "testimonials.html",
+    "title": "What Nibly Owners Say"
   }
 ]
