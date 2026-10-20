@@ -26,6 +26,7 @@ const CLEAN_URL_FILES = {
   "/vendron-setup": "vendron-setup.html",
   "/product-loading": "product-loading.html",
   "/start-up-grid": "start-up-grid.html",
+  "/ops-manual": "ops-manual.html",
   "/quick-start-guide": "quick-start-guide.html",
 
   "/": "index.html",

@@ -1,10 +1,10 @@
 # Nibly static website
 
-Thirty-four pages built with plain HTML, CSS and small JavaScript files. The original
+Thirty-five pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-29 standalone support, service, MADD, guide, sales representative and client review preview pages. `standalone-pages.json`
+30 standalone support, service, MADD, guide, sales representative and client review preview pages. `standalone-pages.json`
 lists each additional page and its original URL. The three `preview-*` pages are noindex copies of Home, The Machine and Locations with proposed wording for client review; they are not in the sitemap or `llms.txt`. Images and fonts are local in
-`assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
+`assets/`; 13 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart or Squarespace runtime. The MADD page loads the PayPal subscription SDK.
 
 ## Preview locally
@@ -52,6 +52,14 @@ if your integration needs native form submission, the disconnected-form code in
 `tools/check_site.py` with the exact intended HubSpot integration and verify a
 real submission and delivery before enabling it. Existing sales enquiry embeds
 on the four original pages are unchanged.
+
+### Operations manual
+
+`/ops-manual` and its original 54-page PDF are public again as authorized on
+October 20, 2026, superseding the September 29 removal. The page retains the
+original `/s/` filename and a content-hash query. Run
+`python3 tools/check_resource_pdfs.py --url https://nibly.ca` after deployment
+to verify the page link and exact PDF bytes.
 
 ### Standalone functionality
 
@@ -103,7 +111,7 @@ Pages project path changes.
 Before switching the domain:
 
 - Confirm the hosting/domain decision and configure/test the intended URL mapping.
-- Verify all paths in `standalone-pages.json` and the 12 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
+- Verify all paths in `standalone-pages.json` and the 13 `/s/` PDF paths on the chosen host. Do not redirect them all to Home.
 - Connect the service request form and decide whether to re-enable donations in a separate change.
 - Confirm the company, package, hosting and support copy with the Nibly team.
 - All enquiry forms now deliver to HubSpot; confirm form routing/notifications
