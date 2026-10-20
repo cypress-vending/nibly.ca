@@ -1,8 +1,8 @@
 # Nibly static website
 
-Thirty-three pages built with plain HTML, CSS and small JavaScript files. The original
+Thirty-four pages built with plain HTML, CSS and small JavaScript files. The original
 Home, The Machine, Locations, Contact Us and Privacy Policy pages are joined by
-28 standalone support, service, MADD, guide, sales representative and client review preview pages. `standalone-pages.json`
+29 standalone support, service, MADD, guide, sales representative and client review preview pages. `standalone-pages.json`
 lists each additional page and its original URL. The three `preview-*` pages are noindex copies of Home, The Machine and Locations with proposed wording for client review; they are not in the sitemap or `llms.txt`. Images and fonts are local in
 `assets/`; 12 original PDF manuals and info kits retain their exact filenames under `s/`.
 There is no build step, shopping cart or Squarespace runtime. The MADD page loads the PayPal subscription SDK.
