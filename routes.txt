@@ -102,13 +102,3 @@
 /testimonials/ /testimonials 301
 /testimonials /testimonials.html 200
 
-# Client review previews (noindex, not in the sitemap)
-/preview-home.html /preview-home 301
-/preview-home/ /preview-home 301
-/preview-home /preview-home.html 200
-/preview-the-machine.html /preview-the-machine 301
-/preview-the-machine/ /preview-the-machine 301
-/preview-the-machine /preview-the-machine.html 200
-/preview-locations.html /preview-locations 301
-/preview-locations/ /preview-locations 301
-/preview-locations /preview-locations.html 200
