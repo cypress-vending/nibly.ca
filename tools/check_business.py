@@ -19,7 +19,8 @@ assert len(embeds)==1
 assert embeds[0]['data-form-id']=='915079cb-bc34-4b07-9079-26e9c3e19248'
 assert embeds[0]['data-portal-id']=='22691627'
 assert 'not yet enabled' not in html and 'Baseline Preview' not in html
-assert [a.get('src') for t,a in nodes if t=='script']==['https://js.hsforms.net/forms/embed/22691627.js','./baseline.js']
+assert [a['src'] for t,a in nodes if t=='script' and 'src' in a]==['https://js.hsforms.net/forms/embed/22691627.js','./baseline.js']
+meta_fallback='https://www.facebook.com/tr?id=1051763753797502&ev=PageView&noscript=1'
 config=(ROOT/'site-config.js').read_text()
 assert 'previewMode: false' in config and 'adsTrackingEnabled: true' in config
 assert embeds[0]['data-form-id'] in config
@@ -31,7 +32,7 @@ for t,a in nodes:
   ref=a.get(key)
   if not ref:continue
   url=urlsplit(ref)
-  if url.scheme or url.netloc:assert key!='src' or ref=='https://js.hsforms.net/forms/embed/22691627.js',('Unexpected remote asset',ref)
+  if url.scheme or url.netloc:assert key!='src' or (t=='script' and ref=='https://js.hsforms.net/forms/embed/22691627.js') or (t=='img' and ref==meta_fallback),('Unexpected remote asset',ref)
   elif url.path:assert (ROOT/unquote(url.path)).is_file(),('Missing asset',ref)
 for ref in re.findall(r'url\([\"\']?(\./assets/[^\"\')]+)',html):assert (ROOT/ref).is_file(),ref
 assert '127.0.0.1' not in html
@@ -52,15 +53,15 @@ for route, headline in {
  assert frames[0]['data-portal-id']=='22691627' and frames[0]['data-region']=='na1'
  assert any(a.get('id')=='form-188-form' for t,a in variants)
  assert any(t=='meta' and a.get('name')=='robots' and a.get('content')=='noindex,nofollow' for t,a in variants)
- assert [a.get('src') for t,a in variants if t=='script']==['https://js.hsforms.net/forms/embed/22691627.js','../business/baseline.js']
- assert 'window.ub' not in text and '/_ub/' not in text and 'fbq(' not in text
+ assert [a['src'] for t,a in variants if t=='script' and 'src' in a]==['https://js.hsforms.net/forms/embed/22691627.js','../business/baseline.js']
+ assert 'window.ub' not in text and '/_ub/' not in text
  for t,a in variants:
   for key in ('src','href'):
    ref=a.get(key)
    if not ref:continue
    url=urlsplit(ref)
    if url.scheme or url.netloc:
-    assert key!='src' or ref=='https://js.hsforms.net/forms/embed/22691627.js',('Unexpected remote asset',ref)
+    assert key!='src' or (t=='script' and ref=='https://js.hsforms.net/forms/embed/22691627.js') or (t=='img' and ref==meta_fallback),('Unexpected remote asset',ref)
    elif url.path:
     target=SITE/unquote(url.path.lstrip('/')) if url.path.startswith('/') else page.parent/unquote(url.path)
     assert target.is_file(),('Missing asset',ref)
