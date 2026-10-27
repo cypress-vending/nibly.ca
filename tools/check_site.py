@@ -58,7 +58,21 @@ class Document(HTMLParser):
 
 normalize = lambda s: re.sub(r'\s+', ' ', s).strip()
 docs = {name: Document((ROOT / name).read_text()).root for name in PAGES}
-assert {str(p.relative_to(ROOT)) for p in ROOT.rglob('*.html') if '.git' not in p.parts} == set(PAGES), 'Unexpected public page'
+# Campaign layouts are checked in check_business.py; the legacy request page is
+# intentionally outside the current navigation and sitemap.
+additional_pages = {'business/index.html', 'side-hustle/index.html', 'franchise/index.html', 'request-v1.html'}
+all_pages = {str(p.relative_to(ROOT)) for p in ROOT.rglob('*.html') if '.git' not in p.parts}
+assert all_pages == set(PAGES) | additional_pages, 'Unexpected public page'
+meta_fallback = 'https://www.facebook.com/tr?id=1051763753797502&ev=PageView&noscript=1'
+for name in all_pages:
+    doc = Document((ROOT / name).read_text()).root
+    pixel_scripts = [n for n in doc.find('head')[0].find('script') if 'connect.facebook.net/en_US/fbevents.js' in n.text()]
+    assert len(pixel_scripts) == 1, (name, 'Expected one Meta pixel loader in head')
+    assert pixel_scripts[0].text().count("fbq('init', '1051763753797502')") == 1, name
+    assert pixel_scripts[0].text().count("fbq('track', 'PageView')") == 1, name
+    fallbacks = [n for n in doc.find('body')[0].find('noscript') if any(i.attrs.get('src') == meta_fallback for i in n.find('img'))]
+    assert len(fallbacks) == 1, (name, 'Expected one Meta noscript fallback in body')
+print(f'PASS: Meta pixel 1051763753797502 and noscript fallback on all {len(all_pages)} pages.')
 titles, descriptions, canonical_urls = set(), set(), set()
 for name, doc in docs.items():
     assert len(doc.find('main')) == 1 and len(doc.find('h1')) == 1, name
@@ -88,7 +102,7 @@ for name, doc in docs.items():
                     'defer' in n.attrs) or (n.tag == 'script' and
                     ref == '//js.hs-scripts.com/22691627.js' and
                     n.attrs.get('id') == 'hs-script-loader' and
-                    'async' in n.attrs and 'defer' in n.attrs) or (name == 'travis.html' and n.tag == 'iframe' and ref == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected remote runtime asset', ref)
+                    'async' in n.attrs and 'defer' in n.attrs) or (n.tag == 'img' and ref == meta_fallback) or (name == 'travis.html' and n.tag == 'iframe' and ref == 'https://www.youtube.com/embed/A6o-OlP_Sg4?feature=oembed'), (name, 'Unexpected remote runtime asset', ref)
                 continue
             assert ref, (name, 'Empty reference')
             raw_path = unquote(url.path) if url.path else name
@@ -135,6 +149,12 @@ assert {n.text for n in sitemap.findall('.//{*}loc')} == canonical_urls, 'Sitema
 robots = (ROOT / 'robots.txt').read_text()
 assert 'User-agent: *\nAllow: /' in robots and DOMAIN + '/sitemap.xml' in robots
 request_doc = docs['request.html']
+service_embeds = [n for n in request_doc.find() if 'hs-form-frame' in n.attrs.get('class', '').split()]
+assert len(service_embeds) == 1 and service_embeds[0].attrs.get('data-form-id') == '2ff4c7dd-449f-469a-a5b1-68c8db99fb0a'
+assert service_embeds[0].attrs.get('data-portal-id') == '22691627'
+assert not request_doc.find('form'), 'Service requests use the HubSpot embed'
+# The disconnected native form remains only in the retained legacy page.
+request_doc = Document((ROOT / 'request-v1.html').read_text()).root
 form = request_doc.find('form')[0]
 assert not form.attrs.get('action'), 'Service form must have no submission endpoint'
 assert any(n.attrs.get('http-equiv') == 'Content-Security-Policy' and n.attrs.get('content') == "form-action 'none'" for n in request_doc.find('meta')), 'Unwired service form must block native submissions too'
