@@ -1,0 +1,2 @@
+- Read `HANDOFF.md` before starting any task.
+- Do not run the preview or verify changes in the browser unless the user explicitly asks.
