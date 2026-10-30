@@ -61,6 +61,14 @@ original `/s/` filename and a content-hash query. Run
 `python3 tools/check_resource_pdfs.py --url https://nibly.ca` after deployment
 to verify the page link and exact PDF bytes.
 
+### Booking redirect
+
+`/meet` (`meet.html`) is a noindex redirect stub that sends visitors to
+https://profitpad-inc.github.io/cypress-webtools/book/, appending the original
+query string and hash (for example UTM parameters). It is excluded from the
+sitemap, llms.txt and the Meta pixel check, since it navigates away immediately.
+Without JavaScript it falls back to a meta refresh without parameters.
+
 ### Standalone functionality
 
 The MADD page includes a PayPal subscription button for the supplied plan
