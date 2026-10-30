@@ -67,7 +67,7 @@ to verify the page link and exact PDF bytes.
 https://profitpad-inc.github.io/cypress-webtools/book/. If the link already has
 an `email` parameter (not an unfilled `{{ ... }}` HubSpot token), it forwards
 straight away, keeping the query string and hash exactly as they are. Otherwise
-it shows a single email field styled like the booking page; on Continue it keeps
+it shows a single email field styled like the booking page (Poppins from `assets/`); on Continue it keeps
 every other parameter and adds `email=` (URL-encoded, so `+` is sent as `%2B`).
 It is excluded from the sitemap and llms.txt.
 
