@@ -8,14 +8,98 @@
   <title>Book a Meeting | NIBLY SNACKS</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <script>
-    // Forward to the booking page, keeping any query string (UTMs etc.) and hash.
-    location.replace('https://profitpad-inc.github.io/cypress-webtools/book/' + location.search + location.hash);
+    // With an email already in the link (HubSpot ?email={{ contact.email }}), forward straight to the booking page,
+    // keeping the query string and hash exactly as they are. Otherwise the form below asks for one first.
+    (function () {
+      var email = (new URLSearchParams(location.search).get('email') || '').trim();
+      if (email && email.indexOf('{{') < 0) location.replace('https://profitpad-inc.github.io/cypress-webtools/book/' + location.search + location.hash);
+    })();
   </script>
-  <noscript><meta http-equiv="refresh" content="0; url=https://profitpad-inc.github.io/cypress-webtools/book/"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap">
+  <style>
+    /* Matches the cypress-webtools booking page this form hands off to. */
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh; background: #f5f8fa; color: #33475b;
+      font: 14px/1.5 'Lexend Deca', sans-serif; -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible { outline: 2px solid #00bda5; outline-offset: 2px; }
+    .book { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; }
+    .card {
+      width: 100%; max-width: 440px; padding: 32px 28px; text-align: center;
+      background: #ffffff; border: 1px solid #dfe3eb; border-radius: 12px; box-shadow: 0 1px 2px rgba(45, 62, 80, .06);
+    }
+    .card img { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; }
+    .card h1 { margin: 0; font-size: 22px; font-weight: 600; color: #213343; }
+    .card p { margin: 8px 0 0; color: #516f90; }
+    .book__form { margin-top: 20px; text-align: left; }
+    .book__label { display: block; margin-bottom: 6px; color: #516f90; }
+    .book__req { margin-left: 2px; color: #d9363e; }
+    .book__input {
+      width: 100%; min-height: 38px; padding: 8px 12px; font: 14px 'Lexend Deca', sans-serif; color: #33475b;
+      background: #ffffff; border: 1px solid #cbd6e2; border-radius: 6px;
+    }
+    .book__input:hover { border-color: #a9bbcf; }
+    .book__input:focus { outline: none; border-color: #00bda5; box-shadow: 0 0 0 3px rgba(0, 189, 165, .2); }
+    .book__input[aria-invalid="true"] { border-color: #d9363e; }
+    .book__err { margin-top: 6px; font-size: 13px; color: #9b1c22; }
+    .book__btn {
+      display: flex; width: 100%; margin-top: 20px; padding: 9px 18px; align-items: center; justify-content: center;
+      font: 600 14px/1.2 'Lexend Deca', sans-serif; color: #ffffff; background: #1c484a;
+      border: 1px solid #1c484a; border-radius: 999px; cursor: pointer;
+    }
+    .book__btn:hover { background: #275f61; border-color: #275f61; }
+  </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1051763753797502');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 </head>
 
 <body>
-  <p>Redirecting to <a href="https://profitpad-inc.github.io/cypress-webtools/book/">book a meeting</a>&hellip;</p>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1051763753797502&amp;ev=PageView&amp;noscript=1"
+alt=""></noscript>
+
+  <main class="book">
+    <div class="card" id="box"><img src="favicon.png" alt=""><h1>Book a meeting</h1><p>Enter your email and we'll open the right person's calendar.</p><form class="book__form" id="email-form" novalidate=""><label class="book__label" for="email">Email<span class="book__req" aria-hidden="true">*</span></label><input class="book__input" type="email" id="email" autocomplete="email" inputmode="email" required="" aria-required="true" aria-describedby="email-err"><div class="book__err" id="email-err" role="alert" hidden="">Please enter a valid email address.</div><button class="book__btn" type="submit">Continue</button></form></div>
+  </main>
+  <script>
+    (function () {
+      var form = document.getElementById('email-form');
+      var input = document.getElementById('email');
+      var err = document.getElementById('email-err');
+      function setError(on) {
+        err.hidden = !on;
+        if (on) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+      }
+      input.addEventListener('input', function () { if (!err.hidden) setError(false); });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = input.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError(true); input.focus(); return; }
+        // Keep every other parameter as-is; drop an empty or unfilled email and add the typed one.
+        // encodeURIComponent writes + as %2B, which the booking page reads back as a literal +.
+        var rest = location.search.replace(/^\?/, '').split('&').filter(function (p) { return p && !/^email(=|$)/.test(p); });
+        rest.push('email=' + encodeURIComponent(email));
+        location.href = 'https://profitpad-inc.github.io/cypress-webtools/book/?' + rest.join('&') + location.hash;
+      });
+    })();
+  </script>
 </body>
 
 </html>

@@ -102,7 +102,7 @@
 /testimonials/ /testimonials 301
 /testimonials /testimonials.html 200
 
-# Booking redirect stub (client-side redirect keeps the query string)
+# Booking email step (client-side redirect keeps the query string)
 /meet.html /meet 301
 /meet/ /meet 301
 /meet /meet.html 200

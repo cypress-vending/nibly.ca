@@ -63,11 +63,13 @@ to verify the page link and exact PDF bytes.
 
 ### Booking redirect
 
-`/meet` (`meet.html`) is a noindex redirect stub that sends visitors to
-https://profitpad-inc.github.io/cypress-webtools/book/, appending the original
-query string and hash (for example UTM parameters). It is excluded from the
-sitemap, llms.txt and the Meta pixel check, since it navigates away immediately.
-Without JavaScript it falls back to a meta refresh without parameters.
+`/meet` (`meet.html`) is a noindex step in front of
+https://profitpad-inc.github.io/cypress-webtools/book/. If the link already has
+an `email` parameter (not an unfilled `{{ ... }}` HubSpot token), it forwards
+straight away, keeping the query string and hash exactly as they are. Otherwise
+it shows a single email field styled like the booking page; on Continue it keeps
+every other parameter and adds `email=` (URL-encoded, so `+` is sent as `%2B`).
+It is excluded from the sitemap and llms.txt.
 
 ### Standalone functionality
 

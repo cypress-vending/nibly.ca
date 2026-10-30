@@ -60,16 +60,16 @@ normalize = lambda s: re.sub(r'\s+', ' ', s).strip()
 docs = {name: Document((ROOT / name).read_text()).root for name in PAGES}
 # Campaign layouts are checked in check_business.py; the legacy request page is
 # intentionally outside the current navigation and sitemap.
-additional_pages = {'business/index.html', 'side-hustle/index.html', 'franchise/index.html', 'request-v1.html'}
-# /meet is a noindex redirect stub; it leaves before a pixel could fire.
-redirect_pages = {'meet.html'}
+# /meet is the noindex email step in front of the cypress-webtools booking page.
+additional_pages = {'business/index.html', 'side-hustle/index.html', 'franchise/index.html', 'request-v1.html', 'meet.html'}
 all_pages = {str(p.relative_to(ROOT)) for p in ROOT.rglob('*.html') if '.git' not in p.parts}
-assert all_pages == set(PAGES) | additional_pages | redirect_pages, 'Unexpected public page'
+assert all_pages == set(PAGES) | additional_pages, 'Unexpected public page'
 meet = (ROOT / 'meet.html').read_text()
 assert "location.replace('https://profitpad-inc.github.io/cypress-webtools/book/' + location.search + location.hash)" in meet
+assert "rest.push('email=' + encodeURIComponent(email))" in meet and 'id="email-form"' in meet
 assert '<meta name="robots" content="noindex">' in meet
 meta_fallback = 'https://www.facebook.com/tr?id=1051763753797502&ev=PageView&noscript=1'
-for name in all_pages - redirect_pages:
+for name in all_pages:
     doc = Document((ROOT / name).read_text()).root
     pixel_scripts = [n for n in doc.find('head')[0].find('script') if 'connect.facebook.net/en_US/fbevents.js' in n.text()]
     assert len(pixel_scripts) == 1, (name, 'Expected one Meta pixel loader in head')
@@ -77,7 +77,7 @@ for name in all_pages - redirect_pages:
     assert pixel_scripts[0].text().count("fbq('track', 'PageView')") == 1, name
     fallbacks = [n for n in doc.find('body')[0].find('noscript') if any(i.attrs.get('src') == meta_fallback for i in n.find('img'))]
     assert len(fallbacks) == 1, (name, 'Expected one Meta noscript fallback in body')
-print(f'PASS: Meta pixel 1051763753797502 and noscript fallback on all {len(all_pages - redirect_pages)} pages; /meet redirect keeps query strings.')
+print(f'PASS: Meta pixel 1051763753797502 and noscript fallback on all {len(all_pages)} pages; /meet keeps query strings.')
 titles, descriptions, canonical_urls = set(), set(), set()
 for name, doc in docs.items():
     assert len(doc.find('main')) == 1 and len(doc.find('h1')) == 1, name
