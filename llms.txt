@@ -22,6 +22,7 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Resources](resources.html): Index of Nibly's guides for people researching an AI vending machine business.
 - [Start a Nibly Vending Business](start-a-vending-business.html): Who a Nibly vending business is for, what you get, how location help works and the questions to ask before you start.
 - [Questions to Ask Before Buying a Vending Machine Business](questions-to-ask-before-buying-a-vending-business.html): The questions a careful buyer should ask any vending opportunity, with Nibly's own answers.
+- [How do people find locations for their vending machines?](people-find-locations-for-their-vending-machines.html): Two ways to find vending machine locations, where to look, when a locator is worth it, and why a signed agreement matters before you pay.
 
 ## Optional
 
