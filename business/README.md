@@ -4,7 +4,7 @@
 
 `baseline.js` initializes tracking and connects the documented `hs-form-event:on-submission:success` event. Only this form's successful submissions emit `lead_created`, using HubSpot's conversion ID for duplicate protection. Failed submissions, clicks and page loads do not emit leads. No contact field values are passed by this adapter. HubSpot owns submission, validation and confirmation independently of pixel availability.
 
-On `/business` and `/business/` only, `submission-redirect.mjs` also waits for the confirmation to paint, then leaves it visible for 1,000 ms before navigating to https://calendly.com/d/cv5w-hbr-rdr/nibly-meeting. This listener runs independently of measurement, so a blocked pixel does not prevent booking. The other campaign pages retain their existing confirmation behavior. Verify this with `node --test tools/submission-redirect.test.mjs`; no production test submission is needed.
+After a successful submission, the shared root module `booking-redirect.mjs` (imported by `baseline.js`, so it runs on `/business/`, `/side-hustle/` and `/franchise/`) waits for the confirmation to paint, then leaves it visible for 1,000 ms before navigating to the Calendly round robin, https://calendly.com/d/cv5w-hbr-rdr/nibly-meeting. The same module also covers the main enquiry form; see the root README. This listener runs independently of measurement, so a blocked pixel does not prevent booking. Verify this with `node --test tools/booking-redirect.test.mjs`; no production test submission is needed.
 
 The obsolete native-form `registerProvider` integration is no longer used. Do not restore it for this embed. The account must retain the Nibly info-kit event setting linked to the campaign and this pixel.
 

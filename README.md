@@ -27,7 +27,12 @@ same live HubSpot embed (portal `22691627`, form
 and submits real enquiries to HubSpot. The old static form markup and its
 browser-native validation are gone from all four pages; `site.js` no longer
 does any form handling, only the mobile menu. Privacy Policy has no enquiry
-form. Email and telephone links use the published Nibly contact details.
+form. After a successful submission, `booking-redirect.mjs` (loaded as a module
+on those four pages) shows HubSpot's confirmation for one second, then sends
+the visitor to the Calendly round robin,
+https://calendly.com/d/cv5w-hbr-rdr/nibly-meeting. The campaign pages use the
+same module (see `business/README.md`); the service request form on `/request`
+does not redirect. Test with `node --test tools/booking-redirect.test.mjs`. Email and telephone links use the published Nibly contact details.
 
 ## Editing and checks
 

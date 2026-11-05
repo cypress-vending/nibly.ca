@@ -1,9 +1,8 @@
 import { siteConfig } from './site-config.js';
 import { createNiblyTracking } from './tracking/nibly-tracking.mjs';
 import { connectHubSpotConversions } from './tracking/hubspot-conversions.mjs';
-import { connectBusinessRedirect } from './submission-redirect.mjs';
-
-connectBusinessRedirect({ formId: siteConfig.hubspotFormId });
+// Importing this connects the Calendly booking redirect for the campaign form.
+import '../booking-redirect.mjs';
 
 const tracking = createNiblyTracking({
   enabled: !siteConfig.previewMode && siteConfig.adsTrackingEnabled,
