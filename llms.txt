@@ -24,6 +24,7 @@ The main sales enquiry forms connect to HubSpot. The separate service request fo
 - [Questions to Ask Before Buying a Vending Machine Business](questions-to-ask-before-buying-a-vending-business.html): The questions a careful buyer should ask any vending opportunity, with Nibly's own answers.
 - [How do people find locations for their vending machines?](people-find-locations-for-their-vending-machines.html): Two ways to find vending machine locations, where to look, when a locator is worth it, and why a signed agreement matters before you pay.
 - [What do you get from a vending opportunity vs a machine?](get-from-vending-opportunity-vs-machine.html): A machine alone is just a machine. See what Nibly adds with location help, how to check an offer is real and how to get started in Greater Vancouver.
+- [What's the best kind of vending business to start?](best-kind-vending-business-start.html): Why a connected, cashless smart vending machine is the strongest start, whether you need a location first, and how to check an opportunity is real.
 
 ## Optional
 
