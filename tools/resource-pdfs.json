@@ -28,5 +28,17 @@
     "file": "s/Nibly_StartUpGrids.pdf",
     "sha256": "f9cd2a87f88d77837cfeb2b9c605afe3352e9dc374208b537151b83c76b9f9ff",
     "source": "https://heron-pike-kejb.squarespace.com/s/Nibly_StartUpGrids.pdf"
+  },
+  {
+    "page": "/quick-start-supplement",
+    "file": "s/Nibly_QuickStartSupplement_8p5x11_v4.pdf",
+    "sha256": "1664f746899bc00f5800f4d9ea6fdd5651dccda174a5131589c423e232743982",
+    "source": "Client-supplied replacement PDF, 2026-11-10"
+  },
+  {
+    "page": "/quick-start-guide",
+    "file": "s/Nibly_QuickStartManual_8p5x11_v5.pdf",
+    "sha256": "6de9fd494a24b2e021188e45c3b653dcdce9a6cfccf529d72529ca69d1a4236b",
+    "source": "Client-supplied replacement PDF, 2026-11-10"
   }
 ]
