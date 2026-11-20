@@ -133,5 +133,20 @@
     "path": "/testimonials",
     "file": "testimonials.html",
     "title": "What Nibly Owners Say"
+  },
+  {
+    "path": "/people-find-locations-for-their-vending-machines",
+    "file": "people-find-locations-for-their-vending-machines.html",
+    "title": "How do people find locations for their vending machines?"
+  },
+  {
+    "path": "/get-from-vending-opportunity-vs-machine",
+    "file": "get-from-vending-opportunity-vs-machine.html",
+    "title": "What do you get from a vending opportunity vs a machine?"
+  },
+  {
+    "path": "/best-kind-vending-business-start",
+    "file": "best-kind-vending-business-start.html",
+    "title": "What's the best kind of vending business to start?"
   }
 ]
