@@ -167,7 +167,7 @@ assert all(n.attrs.get('type') != 'submit' for n in form.find('button'))
 assert {n.attrs.get('name') for n in form.find('input') if 'required' in n.attrs} == {'machine_number', 'request_details'}
 for path in ROOT.glob('s/*.pdf'):
     assert path.read_bytes().startswith(b'%PDF'), path
-assert len(list(ROOT.glob('s/*.pdf'))) == 13
+assert len(list(ROOT.glob('s/*.pdf'))) == 14
 # Byte-for-byte original downloaded from Squarespace on 2026-09-16.
 # Update this fingerprint only when intentionally replacing the manual.
 for rep in ('Pat', 'Graham', 'Jeff', 'Matt', 'Mackenzie'):

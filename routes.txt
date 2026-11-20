@@ -106,3 +106,12 @@
 /meet.html /meet 301
 /meet/ /meet 301
 /meet /meet.html 200
+/people-find-locations-for-their-vending-machines.html /people-find-locations-for-their-vending-machines 301
+/people-find-locations-for-their-vending-machines/ /people-find-locations-for-their-vending-machines 301
+/people-find-locations-for-their-vending-machines /people-find-locations-for-their-vending-machines.html 200
+/get-from-vending-opportunity-vs-machine.html /get-from-vending-opportunity-vs-machine 301
+/get-from-vending-opportunity-vs-machine/ /get-from-vending-opportunity-vs-machine 301
+/get-from-vending-opportunity-vs-machine /get-from-vending-opportunity-vs-machine.html 200
+/best-kind-vending-business-start.html /best-kind-vending-business-start 301
+/best-kind-vending-business-start/ /best-kind-vending-business-start 301
+/best-kind-vending-business-start /best-kind-vending-business-start.html 200
